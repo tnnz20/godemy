@@ -1,6 +1,5 @@
 import * as React from "react"
 import Image from "next/image"
-import Link from "next/link"
 import type { MDXComponents } from "mdx/types"
 import { useMDXComponent } from "next-contentlayer/hooks"
 
@@ -113,16 +112,8 @@ function TableData({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTa
   )
 }
 
-type AnchorLinkProps = {
-  href: string
-  children: string
-}
-function AnchorLink({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement> & AnchorLinkProps) {
-  return (
-    <Link className={cn("font-medium underline underline-offset-4", className)} href={props.href}>
-      {props.children}
-    </Link>
-  )
+function AnchorLink({ className, ...props }: Readonly<React.HTMLAttributes<HTMLAnchorElement>>) {
+  return <a className={cn("font-medium underline underline-offset-4", className)} {...props} />
 }
 
 function BlockQuote({ className, ...props }: Readonly<React.HTMLAttributes<HTMLQuoteElement>>) {
