@@ -1,0 +1,37 @@
+---
+title : Tipe Data Komposit
+chapter : 5
+description : Materi tentang Tipe Data Komposit pada Golang
+---
+
+Map adalah tipe data asosiatif yang ada di Go, berbentuk key-value pair. 
+Untuk setiap data (atau value) yang disimpan, disiapkan juga key-nya. Key 
+harus unik, karena digunakan sebagai penanda (atau identifier) untuk 
+pengaksesan value yang bersangkutan. Map mirip seperti slice, hanya saja 
+indeks yang digunakan untuk pengaksesan bisa ditentukan sendiri tipe-nya 
+(indeks pada map adalah key).
+
+Berikut merupakan sintaks untuk mendeklarasikan sebuah map
+
+<Image
+  src="/content/bab-5/bab-5-15.png"
+  width="618"
+  height="304"
+  alt="Sintaks Inisialisasi Map"
+/>
+
+Key dan value dituliskan dengan pembatas tanda titik dua `:`. Sedangkan 
+tiap itemnya dituliskan dengan pembatas tanda koma `,`. Khusus deklarasi 
+dengan gaya vertikal, tanda koma perlu dituliskan setelah item terakhir.
+
+Pada map terdapat operasi `delete` yang mana digunakan untuk 
+melakukan penghapusan sebuah item dengan key yang ditentukan. Cara 
+penggunaannya, dengan memasukan objek map dan key item yang ingin 
+dihapus sebagai parameter.
+
+<Image
+  src="/content/bab-5/bab-5-16.png"
+  width="618"
+  height="304"
+  alt="Sintaks Delete Item Map"
+/>

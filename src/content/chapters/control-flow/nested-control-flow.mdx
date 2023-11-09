@@ -1,0 +1,30 @@
+---
+title : Nested Control Flow
+chapter : 3
+description : Materi tentang Nested Control Flow pada Golang
+---
+
+Hal yang menarik pada sebuah control flow adalah kita bisa menerapkan konsep nested pada 
+seleksi kondisi. Seleksi kondisi bersarang adalah seleksi kondisi, yang 
+berada dalam seleksi kondisi, yang mungkin juga berada dalam seleksi 
+kondisi, dan seterusnya. Seleksi kondisi bersarang bisa dilakukan pada if -
+else, switch, ataupun kombinasi keduanya.
+
+```go
+if kondisi{
+  switch ekpresi {
+    case kondisi:
+      //aksi
+    default:
+      //aksi
+  }
+}else {
+  if kondisi{
+    // pernyataan
+  }
+}
+```
+
+Sekilas memang terlihat rumit dan berantakan tapi dengan adanya konsep 
+nested ini kita bisa membuat kondisi yang memiliki kondisi lagi ketika nilai 
+awal terpenuhi

@@ -1,0 +1,50 @@
+---
+title : Function Closure
+chapter : 6
+description : Materi tentang Function Closure pada Golang
+---
+
+
+Fungsi closure adalah fungsi dalam bahasa pemrograman yang memiliki 
+kemampuan untuk menangkap dan mengakses variabel yang ada di luar 
+cakupannya (lexical scope). Ini berarti fungsi closure dapat menyimpan dan 
+mengakses variabel-variabel dari lingkungan sekitarnya, bahkan setelah 
+lingkungan tersebut telah selesai dieksekusi. Fungsi closure biasanya 
+digunakan untuk membuat fungsi yang memiliki akses ke state tertentu 
+atau bertindak seperti variabel yang dapat diubah.
+
+Dalam bahasa pemrograman Golang, fungsi closure sangat umum 
+digunakan. Berikut adalah beberapa contoh dan penjelasan tentang 
+bagaimana fungsi closure bekerja dalam Golang:
+
+<Image src="/content/bab-6/bab-6-10.png" width="618" height="304" alt="Sintaks Penerapan Fungsi Closure" />
+
+
+Pada contoh di atas, kita mendefinisikan fungsi increment sebagai fungsi 
+closure. Fungsi ini dapat mengakses dan mengubah variabel counter yang 
+berada di lingkungan sekitarnya, meskipun lingkungan tersebut (blok main) 
+telah selesai dieksekusi. Oleh karena itu, setelah memanggil increment 
+beberapa kali, nilai counter menjadi 3.
+Penjelasan:
+
+- Variabel counter adalah variabel di dalam block scope fungsi main.
+
+- Fungsi increment adalah fungsi closure yang mengakses counter dari 
+lingkungan sekitarnya.
+
+- Ketika fungsi increment dipanggil, ia secara efektif meningkatkan nilai 
+counter di luar lingkungannya sendiri.
+
+- Kita dapat memanggil increment beberapa kali, dan itu akan terus 
+mengakses dan mengubah variabel counter.
+
+Fungsi closure sering digunakan dalam situasi di mana Anda perlu 
+membuat fungsi yang dapat mempertahankan dan memanipulasi state 
+tertentu. Mereka berguna dalam berbagai konteks, seperti pembuatan 
+generator, pengelolaan state dalam fungsi-fungsi lain, dan banyak lagi. 
+Kelebihan utama dari fungsi closure adalah kemampuannya untuk 
+"mengingat" variabel-variabel dari lingkungan sekitarnya bahkan setelah 
+lingkungan tersebut selesai dieksekusi.
+
+
+

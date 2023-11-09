@@ -1,0 +1,45 @@
+---
+title : For With Condition Only
+chapter : 4
+description : Materi tentang For With Condition Only pada Golang
+---
+
+Looping jenis kedua sedikit berbeda dengan looping jenis pertama. Looping 
+ini deklarasi dan perubahan variabel counter tidak dituliskan setelah 
+keyword, hanya kondisi perulangan saja. Konsepnya mirip seperti while 
+milik bahasa pemrograman lain.
+Berikut sintak penulisan looping hanya dengan kondisi saja
+
+```go
+for kondisi {
+    /* 
+      statements di ikuti dengan
+      post-statements
+    */
+}
+```
+
+Perlu di ingat ketika kita membuat looping jenis ini kita wajib menuliskan 
+post - statements jika tidak akan membuat looping kita memasuki mode 
+_infinity looping_. _Infinity looping_ adalah istilah yang sering digunakan dalam 
+konteks pemrograman komputer dan mengacu pada situasi di mana 
+program terjebak dalam loop tak berujung, terus-menerus menjalankan 
+seperangkat instruksi yang sama tanpa pernah berhenti. Hal ini dapat 
+mengakibatkan program menjadi tidak responsif atau menyebabkan 
+penggunaan CPU yang tinggi. _Infinity looping_ terjadi biasanya ketika 
+kondisi yang dibuat tak kunjung terpenuhi. Pada looping ini biasanya terjadi 
+karena kita tidak menaruh sebuah post - statement untuk merubah nilai 
+Inisialisasi.
+
+Berikut penerapan kode untuk menampilkan angka 1 - 100 dengan looping 
+condition only.
+
+```go
+i := 1
+
+for i <= 100 {
+    fmt.Println(i)
+    i++
+}
+```
+

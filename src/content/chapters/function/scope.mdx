@@ -1,0 +1,49 @@
+---
+title : Scope
+chapter : 6
+description : Materi tentang Scope pada Golang
+---
+
+Scope (lingkup) dalam pemrograman mengacu pada wilayah di dalam kode 
+di mana suatu variabel dapat digunakan atau diakses. Scope ini 
+didefinisikan oleh aturan bahasa pemrograman dan memungkinkan Anda 
+untuk memisahkan variabel dengan nama yang sama yang mungkin 
+
+digunakan dalam bagian lain dari kode Anda. Scope membantu mengatur 
+dan melindungi variabel dari tabrakan dan membuat kode lebih terstruktur.
+Dalam bahasa pemrograman Golang, ada beberapa tingkat scope yang 
+umumnya digunakan:
+
+## Block Scope: Variabel dengan block scope hanya dapat diakses di dalam 
+blok di mana mereka dideklarasikan. Blok dapat berupa fungsi, 
+perulangan, atau kondisional.
+
+Sebagai contoh:
+
+<Image src="/content/bab-6/bab-6-7.png" width="618" height="304" alt="Block Scope" />
+
+Pada contoh di atas kita mendeklarasikan sebuah variabel dengan nama 
+“hasil” yang berada pada fungsi “sum”. Ketika kita mencoba mengakses 
+variabel tersebut di fungsi main maka akan terdapat error yang mana 
+variabel “hasil” belum terdeklarasi. 
+
+## Package Scope: Variabel dengan package scope dapat diakses di 
+seluruh package tempat mereka dideklarasikan.
+
+Sebagai contoh:
+
+<Image src="/content/bab-6/bab-6-8.png" width="618" height="304" alt="Package Scope" />
+
+Pada contoh di atas kita mendeklarasikan variabel `five` pada Package 
+Scope ketika kita mencoba mengakses variabel tersebut tidak terdapat 
+error. Berbeda ketika kita mencoba mendeklarasikan variabel didalam 
+block scope.
+
+## Universal Scope: Beberapa bahasa pemrograman juga mendukung 
+universal scope, yang berarti variabel tersebut dapat diakses di seluruh 
+program. Untuk mengakses universal scope diperlukan import terlebih 
+dahulu.
+Scope adalah konsep yang penting dalam pemrograman karena membantu 
+mencegah konflik penamaan dan mengatur bagaimana variabel dapat 
+digunakan di seluruh program Anda. Dengan memahami scope, Anda 
+dapat membuat kode yang lebih terstruktur dan lebih mudah dipelihara.

@@ -1,0 +1,56 @@
+---
+title: Looping
+chapter: 4
+description: Materi tentang Looping pada Golang
+---
+
+Looping merupakan salah satu jenis control flow yang dimana mengatur
+kondisi untuk perulangan, looping dalam pemrograman komputer memiliki
+konsep yang memungkinkan eksekusi ulang sejumlah pernyataan atau blok
+kode berulang-ulang selama suatu kondisi atau kriteria tertentu terpenuhi.
+Looping digunakan untuk mengotomatiskan tugas-tugas yang
+memerlukan repetisi, seperti memproses item dalam sebuah daftar,
+menghitung iterasi, atau menjalankan instruksi berulang kali.
+Looping biasanya terdiri dari tiga komponen utama:
+
+- **Inisialisasi**: Inisialisasi adalah bagian di mana Anda menginisialisasi
+  variabel atau nilai awal yang digunakan dalam loop.
+
+- **Kondisi**: Kondisi adalah ekspresi yang dievaluasi pada setiap iterasi
+  loop. Selama kondisi tersebut benar (true) loop akan terus berlanjut,
+  Ketika kondisi menjadi salah (false), loop akan berhenti.
+
+- **Perubahan** (Post-Statement): Ini adalah langkah yang digunakan
+  untuk mengubah variabel inisialisasi atau ekspresi yang digunakan
+  dalam loop setiap kali iterasi berlangsung. Ini penting untuk mencegah
+  loop menjadi loop tak berujung (_infinite loop_).
+  Dalam pemrograman, kita akan sering menemui masalah yang
+  mengharuskan untuk melakukan kode berulang. Misalnya terdapat tugas
+  untuk menampilkan angka dari 1 sampai dengan 100, Anda bisa saja
+  melakukan print sebanyak seratus kali tetapi apakah ini efisien? Sebagai
+  contoh lihat gambar berikut.
+
+Dalam pemrograman, kita akan sering menemui masalah yang 
+mengharuskan untuk melakukan kode berulang. Misalnya terdapat tugas 
+untuk menampilkan angka dari 1 sampai dengan 100, Anda bisa saja 
+melakukan print sebanyak seratus kali tetapi apakah ini efisien? 
+Lihat contoh sintaks berikut
+
+```go
+fmt.Println(1)
+fmt.Println(2)
+fmt.Println(3)
+fmt.Println(4)
+.............
+fmt.Println(100)
+```
+
+Pada kode di atas, program akan menampilkan angka dari 1 hingga 100
+menggunakan sintaks yang berulang. Terlihat tidak efektif, bukan? Kita bisa 
+membuatnya menjadi lebih simpel dan efisien menggunakan looping.
+Itulah yang menjadi tujuan dari materi looping ini, Anda akan belajar untuk 
+membuat kode program yang efektif dan mudah dibaca oleh programmer 
+lain.
+
+Di Go keyword perulangan hanya for saja meski demikian ada 4 jenis 
+looping yang bisa digunakan pada pemrograman golang.

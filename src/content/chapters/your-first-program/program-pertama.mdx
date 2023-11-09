@@ -1,0 +1,95 @@
+---
+title : Program Pertama
+chapter : 1
+description : Materi tentang Program Pertama pada Golang
+---
+
+Setelah mengetahui sejarah serta keunggulan yang dimiliki oleh bahasa
+pemrograman Golang selanjutnya kita akan membuat program pertama
+dari Bahasa Golang.
+
+### Langkah 1: Menuliskan sintak
+
+Ketik lah code di bawah ini ke dalam code compiler yang disediakan
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello World")
+}
+```
+
+### Langkah 2: Menjalankan program
+
+Langkah selanjutnya jalankan program dengan men klik tombol play yang
+tersedia pada compiler yang ada. Dan lihat output yang diberikan pada
+compiler
+
+compiler
+
+Penjelasan Kode Program
+
+1. Penggunaan Package
+   Setiap program Go harus memiliki `package`. Setiap project harus ada
+   minimal satu file dengan nama package **main**. File yang ber-package
+   main, akan di eksekusi pertama kali ketika program di jalankan.
+
+   Berikut adalah sintak penulisan `package`.
+
+   ```go
+   package <nama-package>
+   package main
+   ```
+
+2. Penggunaan Import
+   Keyword `import` digunakan untuk meng-import atau memasukan
+   library lain ke dalam file program yang kita buat, dengan menggunakan keyword
+   `import` ini kita bisa memanggil sebuah function yang dibuat di file lain
+   maupun function yang dibuat oleh orang lain.
+   library `fmt` merupakan salah satu library bawaan yang disediakan oleh
+   Go, isinya banyak fungsi untuk keperluan _I/O_ yang berhubungan
+   dengan text.
+
+   Berikut adalah sintak penulisan keyword import:
+
+   ```go
+   import <”nama-package”>
+   import "fmt"
+   ```
+
+3. Penggunaan fungsi main
+   Dalam sebuah proyek Golang harus ada 1 file program yang di
+   dalamnya berisi sebuah fungsi bernama main. Fungsi main akan
+   dipanggil pertama kali pada saat eksekusi program.
+   Berikut sintak penulisan fungsi main:
+
+   ```go
+   func main( ){
+      <isi-fungsi>
+   }
+   ```
+
+   <Callout type='warning'>
+   Di bab selanjutnya kita akan mempelajari lebih lanjut tentang fungsi pada pemrograman Golang.
+   </Callout>
+
+4. Penggunaan fmt
+   Fungsi `fmt.Println()` digunakan untuk menampilkan text ke layar (pada
+   konteks ini, terminal atau console). Di program pertama yang telah buat, fungsi ini menampilkan tulisan
+   **Hello world**.
+   Sintak penulisan keyword `fmt.Println()` bisa dilihat pada contoh berikut:
+
+   ```go
+   fmt.Println(<isi-parameter>)
+   fmt.Println("Hello World")
+   ```
+
+Fungsi `fmt.Println()` berada dalam library `fmt`, jadi untuk
+menggunakannya diperlukan library tersebut untuk di-import terlebih
+dahulu.
+
+Fungsi `fmt.Println()` dapat menampung parameter yang tidak terbatas
+jumlahnya. Semua data parameter akan dimunculkan kedalam console.

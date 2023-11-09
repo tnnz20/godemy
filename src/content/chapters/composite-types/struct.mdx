@@ -1,0 +1,49 @@
+---
+title : Struct
+chapter : 5
+description : Materi tentang Struct pada Golang
+---
+
+Dalam bahasa pemrograman Go (Golang), "struct" adalah tipe data yang 
+memungkinkan Anda untuk mendefinisikan tipe data kustom dengan 
+berbagai bidang atau atribut yang dapat memiliki tipe data yang berbeda. 
+Struktur (struct) digunakan untuk membuat entitas data yang lebih 
+kompleks dengan menetapkan beberapa nilai atau data yang terkait dalam 
+satu unit. Dengan memanfaatkan struct, grouping data akan lebih mudah, 
+selain itu rapi dan gampang untuk di-maintain.
+
+```go
+type ninja struct{
+  name string
+  weapon string
+  level int
+}
+```
+Pada contoh di atas kita mendeklarasi sebuah struct dengan nama ninja dan 
+memiliki 3 properti, yang pertama name dengan tipe data string, weapon 
+dengan tipe data slice, dan level dengan tipe data int. 
+
+Dengan mendeklarasikan sebuah struct kita bisa membuat sebuah variabel 
+dengan tipe data struct yang kita buat. 
+
+<Image
+  src="/content/bab-5/bab-5-18.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penerapan Struct"
+/>
+
+Berbeda dengan array untuk memasukan nilai ke variabel dengan struct 
+kita menggunakan tanda titik `.` Sebagai penghubung ke properti struct kita 
+seperti pada gambar kita untuk memasukan nilai `name` kita 
+menggunakan `hatori.name` dst.
+
+Lalu bagaimana dengan mengakses nilai yang sudah kita deklarasikan 
+sama seperti memasukan nilainya kita mengakses nya menggunakan tanda 
+titik `.`. berikut contoh penerapannya
+
+```go
+fmt.Println("Ninja Name: ", hatori.name)
+fmt.Println("Ninja Weapon: ", hatori.weapon)
+fmt.Println("Ninja Level: ", hatori.level)
+```

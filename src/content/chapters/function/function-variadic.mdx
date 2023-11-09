@@ -1,0 +1,49 @@
+---
+title : Function Variadic
+chapter : 6
+description : Materi tentang Function Variadic pada Golang
+---
+
+Fungsi variadic adalah jenis fungsi dalam bahasa pemrograman yang 
+memungkinkan Anda untuk menerima jumlah argumen yang bervariasi 
+saat memanggil fungsi tersebut. Ini berarti Anda dapat memanggil fungsi 
+variadic dengan sejumlah argumen yang sesuai dengan definisi fungsi, 
+
+tanpa harus menentukan jumlah argumen secara eksplisit di deklarasi 
+fungsi. Golang mendukung parameter variadic dengan sintaksis tiga titik 
+`...` yang ditempatkan di depan tipe parameter. 
+
+Parameter variadic memiliki sifat yang mirip dengan slice. Nilai dari 
+parameter-parameter yang disisipkan bertipe data sama, dan ditampung 
+oleh sebuah variabel saja. Cara pengaksesan tiap datanya juga sama, 
+dengan menggunakan index.
+
+Berikut adalah cara mendefinisikan dan menggunakan fungsi variadic 
+dalam bahasa pemrograman Golang:
+
+```go
+func main() {
+    fmt.Println(total(10, 2, 3, 4)) // 19
+}
+
+func total(numbers ...int) int {
+    var total int = 0
+    for _, number := range numbers {
+        total += number
+    }
+    return total
+}
+
+Pada contoh di atas kita buat fungsi `total` dengan parameter variadic 
+dengan begitu kita bisa memberi argumen tanpa batas sesuai dengan tipe 
+data yang kita deklarasikan sebelumnya. Pada contoh di atas kita 
+menggunakan looping untuk mengakses nilai yang di berikan ke fungsi 
+`total`. Penggunaan tanda underscore `_` ini digunakan untuk variabel yang 
+tidak kita gunakan. Variabel ini biasa di sebut _reserved variable_.
+
+Fungsi variadic sangat berguna ketika Anda ingin memungkinkan jumlah 
+argumen yang bervariasi untuk suatu fungsi tanpa harus menentukan 
+jumlah parameter secara eksplisit. Itu membantu membuat kode yang lebih 
+fleksibel dan mudah digunakan kembali.
+
+

@@ -1,0 +1,149 @@
+---
+title: Data Types
+chapter: 2
+description: Materi tentang Data Type pada Golang
+---
+
+Pada pembahasan sebelumnya kita sudah menyinggung beberapa tipe
+data yang bisa kita aplikasikan pada pemrograman Go, seperti _string_ dan
+tipe numerik _int_. Pada chapter ini akan dijelaskan beberapa macam tipe
+data standar yang disediakan oleh Go, beserta cara penggunaannya.
+
+Sebelum membahas tipe data yang tersedia di Go kita akan mengenal apa
+itu tipe data terlebih dahulu.
+Dalam computer programming, tipe data mengacu pada jenis nilai (value)
+yang dimiliki sebuah variabel, tipe data menentukan bagaimana sistem
+komputer atau bahasa pemrograman menggambarkan dan memanipulasi
+data. Setiap tipe data memiliki seperangkat aturan serta batasan yang
+menentukan rentang nilai yang dapat ditampung oleh sebuah variabel,
+operasi yang dapat dilakukan pada nilai-nilai tersebut, dan bagaimana nilai-nilai tersebut disimpan dalam memori.
+Tipe data memiliki beberapa tujuan penting:
+
+- Penyediaan Memori: Setiap tipe data yang berbeda memerlukan
+  jumlah memori yang berbeda untuk menyimpan nilai-nilai mereka.
+  Misalnya, sebuah integer biasanya memerlukan lebih sedikit memori
+  daripada sebuah float dengan magnitudo yang sama. Dengan adanya
+  tipe data membantu mengelola memori dengan efisien.
+- Operasi: Tipe data menentukan operasi yang dapat dilakukan pada
+  nilai-nilai tipe tersebut. Misalnya, Anda dapat melakukan operasi
+  aritmatika pada integer, tetapi tidak pada string.
+- Keamanan Tipe: Tipe data menjaga keamanan tipe, memastikan
+  bahwa variabel digunakan sesuai dengan tujuannya. Hal ini mencegah
+  kesalahan, seperti mencoba menjumlahkan string dan integer.
+- Keterbacaan Kode: Menyebutkan tipe data secara eksplisit dalam
+  kode Anda dapat membuatnya lebih mudah dibaca dan mandiri dokumentasi. Ketika Anda melihat sebuah variabel dideklarasikan
+  sebagai integer, Anda tahu bahwa variabel itu dimaksudkan untuk
+  menyimpan bilangan bulat.
+
+Golang sendiri membagi dua kategori tipe data:
+
+- Basic types. Di kategori ini terdapat tipe data yang umum dalam
+  bahasa programming seperti integers, float, boolean, serta string.
+- Composite types. Ini akan di bahas pada chapter Composite types, tipe
+  data ini lebih kompleks dibandingkan Basic Type, contohnya seperti
+  array, slice dan map.
+
+## Tipe Data Numerik Non-Desimal
+
+Tipe data numerik non-desimal atau biasa di sebut integer, tipe data
+ini ada beberapa jenis. Secara umum ada 2 tipe data kategori ini
+yang perlu diketahui.
+
+- uint, tipe data untuk bilangan cacah (bilangan positif).
+- int, tipe data untuk bilangan bulat (bilangan negatif dan positif).
+
+Kedua tipe data di atas kemudian dibagi lagi menjadi beberapa
+jenis, dengan pembagian berdasarkan lebar cakupan nilainya,
+detailnya bisa dilihat di tabel berikut.
+
+| Tipe Data | Cakupan Bilangan                                  |
+| :---------: | ------------------------------------------------- |
+| uint8     | 0 ↔ 255                                          |
+| uint16    | 0 ↔ 65535                                        |
+| uint32    | 0 ↔ 4294967295                                   |
+| uint64    | 0 ↔ 18446744073709551615                         |
+| uint      | sama dengan uint32 atau uint64 (tergantung nilai) |
+| byte      | sama dengan uint8                                 |
+| int8      | -128 ↔ 127                                       |
+| int16     | -32768 ↔ 32767                                   |
+| int32     | -2147483648 ↔ 2147483647                         |
+| int64     | -9223372036854775808 ↔ 9223372036854775807       |
+| int       | sama dengan int32 atau int64 (tergantung nilai)   |
+| rune      | sama dengan int32                                 |
+
+```go
+var positiveNumber int = 5673
+var negativeNumber int = -5723
+```
+
+Dianjurkan untuk tidak sembarangan dalam menentukan tipe data
+variabel, sebisa mungkin tipe yang dipilih harus disesuaikan dengan
+nilainya, karena efeknya adalah ke alokasi memori variabel.
+Pemilihan tipe data yang tepat akan membuat pemakaian memori
+lebih optimal dan tidak berlebihan.
+
+## Tipe Data Numerik Desimal
+
+Tipe data numerik desimal atau float merupakan tipe data yang
+mengandung bilangan riil Misalnya, _1.234_, _123.4_, _0.00001234_
+semuanya adalah bilangan floating-point. Dalam bahasa Go ada dua
+jenis float yang perlu diketahui, float32 dan float64. Perbedaan
+kedua tipe data tersebut berada di lebar cakupan nilai desimal yang
+bisa ditampung. Perlu di ingat penulisan nilai numerik desimal pada
+
+bahasa pemrograman menggunakan dot `.` bukan menggunakan
+koma karena koma memiliki arti lain di dalam bahasa pemrograman
+
+```go 
+var decimalNumber float = 2.62
+var phi float = 3.14
+```
+
+## Tipe Data String
+
+Tipe data string ini berbeda dengan tipe data float maupun integer
+karena tipe data ini digunakan untuk menyimpan barisan karakter.
+Tipe data ini juga tidak bisa digunakan untuk melakukan operasi
+aritmatika.
+Ciri khas dari tipe data string adalah nilainya di apit oleh tanda
+double quote atau petik dua `"`. Contoh penerapannya:
+
+```go
+var name string = "Ucok"
+var age string = "7"
+```
+
+## Tipe Data Boolean
+
+Boolean adalah sebuah tipe data yang hanya memiliki dua nilai,
+yaitu benar atau salah `true` or `false`. Dalam bahasa pemrograman
+nilai true atau benar dapat digantikan atau dialihkan menjadi **1**,
+sedangkan nilai false atau salah dialihkan menjadi **0**. Tipe data ini
+biasa dimanfaatkan dalam seleksi kondisi **Control Flow** dan
+perulangan **Looping** yang akan di bahas pada chapter selanjutnya
+
+## Tipe data nil
+
+nil bukan merupakan tipe data, melainkan sebuah nilai. Variabel
+yang isi nilainya `nil` berarti memiliki nilai kosong.
+Semua tipe data yang sudah dibahas di atas memiliki zero value
+(nilai default tipe data). Artinya meskipun variabel dideklarasikan
+dengan tanpa nilai awal, tetap akan ada nilai default-nya.
+
+- Zero value dari string adalah `""` (string kosong).
+- Zero value dari bool adalah `false`.
+- Zero value dari tipe numerik non-desimal adalah **0**.
+- Zero value dari tipe numerik desimal adalah **0.0**.
+
+Zero value berbeda dengan `nil`. Nil adalah nilai kosong, benar-benar
+kosong. Nil tidak bisa digunakan pada tipe data yang sudah dibahas
+di atas. Ada beberapa tipe data yang bisa di-set nilainya dengan nil,
+di antaranya:
+
+- Pointer
+- function
+- slice
+- map
+- channel
+- interface kosong atau any (yang merupakan alias dari
+  `interface{}`)

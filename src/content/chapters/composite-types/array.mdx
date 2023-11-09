@@ -1,0 +1,163 @@
+---
+title : Array
+chapter : 5
+description : Materi tentang Array pada Golang
+---
+
+Tipe data komposit yang pertama adalah Array. Array adalah kumpulan 
+data bertipe sama, yang disimpan dalam sebuah variabel. Perlu diketahui 
+oleh Anda, array bukan hanya sebuah tipe data, melainkan salah satu tipe 
+struktur data berjenis linear. Array merupakan kata dalam bahasa Inggris 
+yang jika diterjemahkan ke bahasa Indonesia memiliki arti "sebuah 
+kelompok besar yang terdiri dari beberapa hal atau orang".
+
+Pada Golang Array memiliki kapasitas yang nilainya ditentukan pada saat 
+pembuatan, menjadikan elemen/data yang disimpan di array tersebut 
+jumlahnya tidak boleh melebihi yang sudah dialokasikan.
+
+<Image
+  src="/content/bab-5/bab-5-2.png"
+  width="618"
+  height="304"
+  alt="Ilustrasi Array"
+/>
+
+Setiap elemen array memiliki indeks berupa angka yang merepresentasikan 
+posisi urutan elemen tersebut. Yang perlu di ingat adalah indeks array 
+dimulai dari 0. Default nilai tiap elemen array pada awalnya tergantung dari 
+tipe datanya. Jika int maka tiap element zero value-nya adalah 0, jika bool 
+maka false, dan seterusnya.
+
+Berikut contoh sintaks penerapan array pada pemrograman Golang:
+
+<Image
+  src="/content/bab-5/bab-5-3.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penerapan Array"
+/>
+
+Penjelasan pada penerapan sintaks di atas:
+
+- Pertama kita mendeklarasikan sebuah variabel array dengan nama 
+`fruits` yang memiliki tipe data string dan kita alokasikan 4 slot atau 
+memori ke array tersebut. Mendeklarasikan sebuah array mirip pada 
+deklarasikan variabel biasa hanya saja untuk penanda bahwa ini 
+merupakan array kita menggunakan kurung siku `[ ]` di depan tipe 
+data dan menaruh jumlah slot yang kita inginkan.
+
+- Kedua untuk melakukan assignment value ke sebuah array kita bisa 
+memasukan dengan mendefinisikan nomor slot yang kita inginkan lalu 
+masukan nilai berdasarkan tipe data yang kita deklarasikan di awal. 
+Perlu di ketahui jika Anda memasukan nilai yang melebihi dari alokasi 
+memori kita di awal misalkan pada gambar di atas kita memasukan 
+nilai ke `fruits[4]` maka akan menghasilkan error.
+
+## Deklarasi Nilai Awal Array
+Selain itu kita juga bisa melakukan inisialisasi nilai awal di array 
+berikut contoh sintaks untuk melakukan assignment nilai awal pada 
+array
+
+<Image
+  src="/content/bab-5/bab-5-4.png"
+  width="618"
+  height="304"
+  alt="Sintaks Inisialisasi Nilai Awal Array"
+/>
+
+Berbeda dengan deklarasi sebelumnya, Anda perlu membuat 
+sebuah variabel lalu mendefinisikan array tersebut sebagai nilai, lalu 
+untuk melakukan Inisialisasi nilai awalnya menggunakan tanda 
+kurung kurawal setelah tipe datanya, untuk memisahkan nilai 
+antara element menggunakan tanda koma `,`. Perlu di ingat bahwa 
+pendeklarasian sebuah array tanpa menggunakan spasi.
+
+## Deklarasi Nilai Awal Tanpa Mendefinisikan Jumlah Memori
+
+Pada Golang kita bisa melakukan deklarasi sebuah array tanpa 
+melakukan alokasi memori nya sama seperti deklarasi type
+inference yang mana golang sendiri yang menyesuaikan tipe data 
+berdasarkan variabelnya. Dengan menggunakan _elipsis_ `...` maka dengan itu golang akan menentukan jumlah memorinya 
+sendiri berdasarkan elemen yang ada.
+
+```go
+var fruits = [...]string{"apple", "grape", "banana", "melon"}
+```
+
+## Deklarasi Array Multidimensi
+
+Array multidimensi adalah array yang tiap elemennya juga berupa 
+array (dan bisa seterusnya, tergantung ke dalaman dimensinya).
+
+<Image
+  src="/content/bab-5/bab-5-5.png"
+  width="618"
+  height="304"
+  alt="Ilustrasi Array Multidimensi"
+/>
+
+Cara deklarasi array multidimensi secara umum sama dengan cara 
+deklarasi array biasa, dengan cara menuliskan data array dimensi 
+selanjutnya sebagai elemen array dimensi sebelumnya. Khusus 
+untuk array yang merupakan sub dimensi atau elemen, boleh tidak 
+dituliskan tipe datanya pada setiap sub dimensinya. Berikut 
+sintaksnya
+
+
+<Image
+  src="/content/bab-5/bab-5-6.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penerapan Array Multidimensi"
+/>
+
+## Akses Nilai Array
+Setelah kita tahu apa itu array dan bagaimana cara 
+mendeklarasikan sebuah array, selanjutnya adalah bagaimana kita 
+mengakses nilai array yang sudah di deklarasikan. Sebenarnya pada 
+contoh sebelumnya kita sudah melakukan bagaimana cara 
+mengakses memori atau slot yang tersedia pada sebuah array. Cara 
+nya yaitu kita menentukan index nilai mana yang ingin kita akses. 
+Sebagai contoh bisa dilihat pada contoh berikut.
+
+```go
+var fruits = [4]string{"apple", "grape", "banana", "melon"}
+fmt.Println(fruits[0]) // apple
+fmt.Println(fruits[1]) // grape
+fmt.Println(fruits[2]) // banana
+fmt.Println(fruits[3]) // melon
+```
+
+Pada contoh digambar kita mengakses nilai sebuah array
+menggunakan nomor index yang tersedia pada sebuah array.
+
+## Perulangan Array
+Untuk mempermudah dalam mengakses nilai pada array kita bisa 
+memanfaatkan perulangan sehingga Anda bisa mengambil nilai 
+sebuah array tanpa perlu melakukan index satu persatu. Ada dua 
+cara yang bisa digunakan yang pertama menggunakan standard 
+looping dan kedua for - range. Berikut contoh penerapan keduanya
+
+```go
+var fruits = [4]string{"apple", "grape", "banana", "melon"}
+for i := 0; i < len(fruits); i++ {
+  fmt.Printf("index %d : value %s\n", i, fruits[i])
+}
+```
+
+Pada standard for kita menggunakan sebuah keyword `len` yang 
+digunakan untuk mencek panjang sebuah array, dengan 
+mengetahui panjang sebuah array kita bisa membuat sebuah 
+kondisi berdasarkan panjang tersebut. Selain itu pada penerapan 
+kali ini kita mengunakan keyword baru yaitu `%s` berbeda dengan 
+`%d` yang digunakan untuk menampilkan nilai integer, `%s` 
+digunakan untuk menampilkan nilai string ke console.
+
+
+```go
+var fruits = [4]string{"apple", "grape", "banana", "melon"}
+for i, fruit := range fruits {
+  fmt.Printf("i %d : value %s\n", i, fruit)
+}
+
+```

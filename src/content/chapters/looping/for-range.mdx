@@ -1,0 +1,71 @@
+---
+title : For Range
+chapter : 4
+description : Materi tentang For Range pada Golang
+---
+
+Selanjutnya adalah looping menggunakan keyword for dan range. Looping 
+jenis ini berbeda dengan jenis looping sebelumnya karena looping ini 
+biasanya digunakan untuk tipe data komposit seperti array, map, slice atau 
+urutan yang diketahui (sequence).
+
+<Callout type="warning">
+Detail tipe data komposit akan di bahas pada chapter selanjutnya.
+</Callout>
+
+Berikut sintaks penulisan for range pada pemrograman Golang
+
+```go
+for index, value := range sequence {
+    // statements
+}
+```
+
+Dengan adanya for range kita dapat melakukan sebuah iterasi terhadap 
+sebuah urutan. Sebagai contoh terdapat sebuah array yang berisi umur 
+pegawai, dengan menggunakan for range kita dapat menampilkan list 
+umur pegawai kita dengan mudah.
+
+Berikut penerapan for range.
+
+```go
+var ages = [3]int{20, 18, 30}
+
+for i, age:= range ages{
+    fmt.Printf("Index ke-%d, Umur = %d", i, age)
+}
+```
+
+Penjelasan kode:
+
+- Pada contoh penerapan for - range kita mendeklarasikan sebuah 
+variabel dengan nama ages (penamaan sebuah array sebaiknya 
+menggunakan kata jamak dalam bahasa Inggris) yang mana nilainya 
+berupa kelompok integer (array) detail lebih lanjut tentang array akan 
+di bahas pada chapter selanjutnya. Di dalam `array` terdapat `3` umur 
+yang bertipe data `int`.
+
+- Penggunaan for-range selalu di ikuti oleh dua variabel yang pertama 
+index dan kedua merupakan variabel yang akan menampung setiap 
+nilai dari `array` yang ingin di iterasi. Kedua variabel tersebut akan di 
+assignment value dengan keyword range serta variabel `array` yang 
+sudah kita buat.
+
+- Nilai sebuah index akan mengacu kepada jumlah tipe data komposit 
+yang dibuat jika berdasarkan konteks kode diatas maka dia akan 
+mengikuti `array` yaitu `3`. Perlu di ingat bahwa nilai **index** akan selalu 
+dimulai dari angka `0`
+
+- Nilai age akan menampung nilai nilai yang berada pada variabel ages
+dan akan sesuai urutan, berdasarkan deklarasi kode di atas nilai age 
+akan menampung nilai pertama yaitu `20` dst.
+
+- `fmt.Printf` merupakan salah method yang tersedia pada paket fmt. Jika 
+sebelumnya kita mengenal `Println` yang digunakan untuk membuat 
+baris baru pada setiap statementnya, `Printf` sendiri digunakan untuk 
+formatting perbedaannya umumnya ketika Anda menggunakan `Printf` 
+anda perlu melakukan escape character menggunakan keyword `\n` 
+untuk melakukan baris baru. `%d` sendiri digunakan untuk melakukan 
+formatting atau template terhadap tipe data integers bisa dilihat pada 
+kode di atas `%d` pertama akan menampilkan nilai dari variabel `i` dan 
+`%d` yang kedua akan menampilkan nilai dari variabel age.

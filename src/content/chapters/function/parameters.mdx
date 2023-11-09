@@ -1,0 +1,42 @@
+---
+title : Parameters
+chapter : 6
+description : Materi tentang Parameters pada Golang
+---
+
+Dalam konteks pemrograman parameter adalah variabel atau nilai yang 
+digunakan sebagai placeholder dalam sebuah fungsi. Parameter sendiri 
+akan berperan sebagai placeholder untuk nilai yang akan diberikan kepada 
+fungsi. Pada Golang tipe data sebuah parameter selalu di definisikan 
+terlebih dahulu. Sebuah fungsi dapat memiliki satu atau lebih parameters. 
+Jadi jika terdapat sebuah fungsi yang memiliki parameter ketika di panggil 
+kita wajib memberikan nilai ke dalam parameter fungsi tersebut. Ketika 
+anda memberikan nilai ke sebuah parameter yang akan di panggil ini 
+disebut memberikan sebuah argument. 
+
+Sebagai contoh lihat gambar berikut.
+
+<Image
+  src="/content/bab-6/bab-6-3.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penerapan Fungsi Parameter"
+/>
+
+**Penjelasan gambar** kita membuat sebuah fungsi `greeting` yang dinamis 
+dengan menggunakan parameter yang menampung `name` dengan tipe 
+data string dan `age` yang tipe data integer. Dengan membuat fungsi yang 
+memiliki sebuah parameter kita bisa mengatur nilai yang Anda inginkan 
+setiap kali pemanggilan fungsi. Lalu bagaimana cara untuk memanggil 
+fungsi dengan sebuah parameter. Sebagai contoh lihat gambar di bawah.
+
+<Image
+  src="/content/bab-6/bab-6-4.png"
+  width="618"
+  height="304"
+  alt="Sintaks Memanggil Fungsi Dengan Argument"
+/>
+
+Dengan begitu kita bisa memanggil fungsi `greeting` dengan `name` dan 
+`age` yang berbeda setiap kali pemanggilan fungsi, dengan begini kita 
+sudah menerapkan sebuah konsep **DRY**.

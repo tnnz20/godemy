@@ -1,0 +1,79 @@
+---
+title : Percabangan If - Else
+chapter : 3
+description : Materi tentang Percabangan If - Else pada Golang
+---
+
+Dalam pemrograman, sebuah kode program dapat berjalan berdasarkan 
+kondisi tertentu. Maknanya, Anda dapat memberikan instruksi berdasarkan 
+**"Jika-maka"** (if-else).
+
+Sebagai contoh:
+1. Jika anda tidak menyelesaikan tugas pemrograman Golang, maka 
+anda tidak lulus di kelas ini. Sebaliknya jika anda mengerjakan tugas 
+pemrograman Golang maka anda lulus.
+2. Jika variabel total_belanja kurang dari 10 ribu, maka tidak dapat 
+pemotongan harga. Sebaliknya jika variabel total_belanja lebih dari 
+10 ribu maka akan dapat pemotongan harga
+Lalu bagaimana cara penerapan pada pemrograman Golang?
+Cara penerapan if-else di Golang sama seperti pada bahasa pemrograman 
+lain. Yang membedakan adalah di Golang sendiri kita tidak perlu 
+menuliskan tanda kurung `()` pada kondisi yang ingin di capai, namun kita 
+wajib menuliskan kurung kurawal untuk membungkus pernyataan suatu 
+kondisi kita.
+
+Contoh sintak penulisan seleksi kondisi if pada pemrograman Go
+
+```go
+if kondisi {
+    // pernyataan
+} else{
+  // pernyataan
+}
+```
+
+Hal yang harus di perhatikan adalah kondisi, untuk menjalankan sebuah 
+pernyataan di dalam sebuah seleksi kondisi diperlukan sebuah kondisi yang 
+bernilai true (Boolean), semisal pada contoh pertama di atas syarat untuk
+
+kita lulus dengan memiliki kondisi kita mengerjakan tugas pemrograman 
+Golang, jika tidak terpenuhi maka tidak lulus. 
+
+Berikut contoh penerapan berdasarkan contoh
+
+```go
+package main
+import "fmt"
+
+func main(){
+  tugas := true
+  
+  if tugas{
+    fmt.Println("Selamat anda lulus")
+  } else{
+    fmt.Println("Maaf anda tidak lulus")
+  }
+}
+```
+
+Control flow sendiri akan selalu di mulai pada bagian atas berdasarkan 
+contoh di atas dia akan mengecek kondisi pertama terlebih dahulu jika 
+kondisi if bernilai true maka akan menampilkan kode yang di dalamnya jika 
+tidak dia akan masuk ke bagian else dan menampilkan kode di dalamnya.
+Pada contoh sebelumnya kita hanya menerapkan 1 kondisi saja, jika kondisi 
+if tidak terpenuhi maka dia akan masuk ke kondisi else. Kita bisa 
+menambahkan beberapa kondisi lainnya dengan menggunakan keyword 
+else if dengan kondisi. Berbeda dengan else kita wajib menambahkan 
+kondisi pada keyword else if berikut sintak penulisannya
+
+<Image
+  src="/content/bab-3/bab-3-4.png"
+  width="718"
+  height="404"
+  alt="Ilustrasi Gopher Maskot Golang"
+/>
+
+
+Dengan menambahkan keyword `else-if` kita bisa membuat beragam 
+kondisi lainnya.
+

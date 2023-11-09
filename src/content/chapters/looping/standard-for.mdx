@@ -1,0 +1,70 @@
+---
+title : Standard For
+chapter : 4
+description : Materi tentang Standard For pada Golang
+---
+
+Looping pertama yang bisa digunakan pada Golang merupakan looping 
+yang biasa kita temukan pada pemrograman lain khususnya C, looping ini 
+memiliki tiga komponen yaitu:
+
+1. Initialization
+2. Condition
+3. post-statement.
+
+Ketiga komponen ini memiliki peran penting pada standar looping berikut 
+sintak penulisannya
+
+<Image
+  src="/content/bab-4/bab-4-2.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penulisan Standard Looping"
+/>
+
+Penjelasan:
+- Keyword for digunakan untuk menandakan kepada compiler bahwa ini 
+ditujukan untuk looping. Ingat semua control flow selalu di memiliki 
+kurung kurawal.
+
+- Inisialisasi digunakan untuk penanda yang akan digunakan pada 
+looping yang Anda buat pada standard looping kita wajib melakukan 
+Inisialisasi sebuah variable terlebih dahulu, uniknya pada 
+pemrograman golang kita dapat membuat variabel sementara 
+(_temporary variable_) yang hanya akan berkerja pada scope control flow 
+itu sendiri (materi scope akan dipelajari pada chapter function) intinya 
+adalah variabel ini hanya akan berguna pada looping yang anda buat, 
+yang berarti anda tidak dapat mengakses variabel ini diluar looping. 
+Nama variabel `i` sendiri berasal dari kata index kita bisa saja memakai 
+nama variabel yang lainnya.
+
+- Kondisi merupakan ekspresi sebuah looping proses pengulangan akan 
+bergantung kepada kondisi bisa dilihat pada gambar kita membuat 
+kondisi dimana `i <= 100` jadi simpelnya pengulangan akan terus 
+berlangsung jika ”i” masih kurang dari sama dengan 100 sebaliknya jika
+`i` lebih dari 100 maka pengulangan akan berakhir. Ingat pada kondisi 
+hanya menerima nilai Boolean `true` atau `false`. Jika anda tidak membuat 
+sebuah kondisi pada perulangan maka anda akan menemukan 
+masalah infinity looping yang akan membuat sebuah perulangan 
+berjalan terus menerus karena itu kita wajib membuat sebuah kondisi 
+pada looping
+
+- Post-Statement ini yang akan merubah nilai yang sudah kita 
+Inisialisasi di awal tadi. pada gambar “i++” memiliki arti “i+1” ini 
+merupakan singkatan umum yang di gunakan pada pemrograman. 
+Kita bisa menggunakan “i--” untuk “i-1”. Dengan adanya post -
+statement nilai pada inisialisasi di awal akan terus berubah 
+berdasarkan statement yang dibuat.
+
+Berikut penerapan kode untuk menampilkan angka 1 - 100 pada pemgrograman Go
+
+```go
+package main
+import "fmt"
+
+func main() {
+    for i := 1; i <= 100; i++ {
+        fmt.Println(i)
+    }
+}
+```

@@ -1,0 +1,57 @@
+---
+title : Komentar
+chapter : 1
+description : Materi tentang Komentar pada Golang
+---
+
+Komentar salah satu hal yang umum ada pada setiap bahasa 
+pemrograman, komentar biasa dimanfaatkan untuk menyisipkan catatan 
+pada kode program, menulis penjelasan atau deskripsi mengenai suatu blok 
+kode, atau bisa juga digunakan untuk me-remark kode (men-non-aktif kan
+kode yang tidak digunakan). Komentar akan diabaikan ketika kompilasi 
+maupun eksekusi program.
+
+Ada 2 jenis komentar di Go, **inline** & **multiline**. Pada pembahasan ini akan 
+dijelaskan tentang penerapan dan perbedaan kedua jenis komentar 
+tersebut.
+
+## Komentar Inline
+
+Penulisan komentar jenis ini di awali dengan tanda double slash `//`
+lalu diikuti pesan komentarnya. Komentar inline hanya berlaku 
+untuk satu baris pesan saja. Jika pesan komentar lebih dari satu 
+baris, maka tanda `//` harus ditulis lagi di baris selanjutnya.
+
+Berikut contoh sintaks penerapan komentar inline pada Go
+
+```go
+// Ini adalah komentar inline
+
+// Baris dibawah ini akan menampilkan-
+// pesan Hello World
+fmt.Println("Hello World")
+
+// fmt.Println("Baris ini tidak akan dieksekusi")
+```
+
+## Komentar Multiline
+Jika kita ingin membuat sebuah komentar lebih dari satu baris atau 
+memiliki sebuah komentar yang cukup panjang kita bisa 
+menggunakan komentar multiline untuk membuat sebuah 
+komentar lebih rapi dan mudah dilihat. Berbeda dengan Inline, 
+Multiline ditulis menggunakan slash dan asterisk ` /* ` dan di akhiri 
+dengan asterisk dan slash `*/`
+
+Berikut contoh sintaks penerapan komentar multiline pada Go
+
+```go
+/* 
+Baris dibawah ini akan menampilkan-
+pesan Hello World
+*/
+
+fmt.Println("Hello World")
+```
+
+
+latihan

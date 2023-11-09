@@ -1,0 +1,77 @@
+---
+title : Switch Case
+chapter : 3
+description : Materi tentang Switch Case pada Golang
+---
+
+Switch dan case adalah struktur kontrol yang digunakan dalam 
+pemrograman untuk membuat keputusan berdasarkan nilai dari ekspresi 
+tertentu. Ini memungkinkan Anda untuk memilih salah satu dari beberapa 
+pernyataan atau blok kode yang akan dieksekusi berdasarkan hasil dari 
+ekspresi yang dievaluasi. Struktur ini sangat umum dalam banyak bahasa 
+pemrograman.
+
+Berikut adalah pengertian dan deskripsi dari switch dan case:
+
+**Switch**: switch adalah struktur kontrol yang digunakan untuk memeriksa 
+nilai ekspresi dan memilih tindakan yang sesuai berdasarkan nilai tersebut. 
+Biasanya, switch akan memeriksa ekspresi dan membandingkannya 
+dengan sejumlah case yang telah ditentukan. Tindakan yang sesuai dengan 
+case yang cocok akan dieksekusi. Jika tidak ada case yang cocok, Anda dapat 
+menentukan sebuah blok default yang akan dieksekusi.
+
+**Case**: case adalah bagian dari struktur switch yang mendefinisikan nilai 
+yang akan dibandingkan dengan ekspresi switch. Jika nilai ekspresi sama 
+dengan nilai yang didefinisikan dalam salah satu case, maka blok kode yang 
+terkait dengan case tersebut akan dieksekusi. Anda dapat memiliki 
+beberapa case dalam satu switch untuk mengatasi beberapa skenario yang 
+berbeda.
+Penggunaan switch dan case sangat berguna dalam pengkodean saat Anda 
+perlu membuat keputusan berdasarkan berbagai nilai yang mungkin dari 
+suatu ekspresi. Ini menggantikan penggunaan sejumlah pernyataan if yang 
+panjang dan tidak efisien dalam beberapa kasus. Contoh umum 
+penggunaannya adalah untuk mengelola logika yang berbeda berdasarkan 
+hari dalam seminggu, nilai sensor, tindakan pengguna, atau pilihan 
+pengguna dalam aplikasi.
+
+
+Berikut sintak penulisan Switch case pada golang:
+
+```go
+switch ekspresi{
+  case nilai1:
+    // blok kode akan dieksekusi jika ekspresi sama dengan nilai1
+  case nilai2:
+    // blok kode akan dieksekusi jika ekspresi sama dengan nilai2
+  default:
+    // blok kode akan dieksekusi jika tidak ada case yang sesuai
+}
+```
+
+Berbeda dengan “if-else” penulisan switch case yang dimana kita harus 
+menambahkan kurung kurawal di setiap kondisi nya, pada switch case 
+menggunakan tanda titik dua “:”. Selain itu pada switch case juga kita bisa 
+menetapkan sebuah nilai default ketika semua kondisi yang dibuat tidak 
+terpenuhi.
+
+Perlu diketahui, switch pada pemrograman Go memiliki perbedaan 
+dibanding bahasa lain. Di Go, ketika sebuah case terpenuhi, tidak akan 
+dilanjutkan ke pengecekan case selanjutnya, meskipun tidak ada keyword 
+break di situ. Konsep ini berkebalikan dengan switch pada umumnya, yang 
+ketika sebuah case terpenuhi, maka akan tetap dilanjut mengecek case 
+selanjutnya kecuali ada keyword break untuk mengakhiri kondisi.
+Switch case pada Go juga dapat menampang case yang memiliki kondisi 
+lebih dari satu. Cara penerapannya pun cukup mudah Anda hanya perlu 
+memisahkan setiap kondisi dengan tanda koma `,`. Seperti contoh berikut
+
+```go
+var point int = 6
+switch point{
+  case 8, 9, 10:
+    fmt.Println("Nilai Tinggi")
+  case 7, 6, 5:
+    fmt.Println("Nilai Cukup")
+  default:
+    fmt.Println("Nilai Kurang")
+}
+```

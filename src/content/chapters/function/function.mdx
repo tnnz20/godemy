@@ -1,0 +1,70 @@
+---
+title : Function
+chapter : 6
+description : Materi tentang Function pada Golang
+---
+
+Fungsi merupakan aspek penting dalam pemrograman. Definisi fungsi 
+sendiri adalah sekumpulan blok kode yang dibungkus dengan nama 
+tertentu. Penerapan fungsi yang tepat akan menjadikan kode lebih modular 
+dan juga *dry* (kependekan dari don't repeat yourself), dengan 
+menggunakan fungsi Anda tak perlu menuliskan banyak kode yang 
+kegunaannya berkali-kali, cukup sekali saja lalu panggil sesuai kebutuhan.
+Mengetahui cara kerja fungsi bisa membantu kinerja seorang programmer, 
+baik itu dari keefisienan dalam membuat sebuah kode maupun 
+memudahkan Anda dalam memahami sebuah kode yang sebelumnya 
+dibuat.
+
+Sebenarnya kita sudah menerapkan sebuah fungsi pada contoh - contoh 
+sebelumnya, yaitu fungsi `main` yang mana tugasnya adalah dijalankan 
+pertama kali ketiap program di jalankan. Fungsi main sendiri merupakan 
+fungsi utama pada program Golang, tanpa adanya fungsi main sebuah 
+program Golang tidak akan bisa dijalankan. 
+Cara membuat fungsi cukup mudah, yaitu dengan menuliskan keyword 
+`func`, lalu diikuti setelahnya nama fungsi, kurung yang berisikan 
+parameter, dan kurung kurawal untuk membungkus blok kode. 
+
+Berikut contoh pembuatan fungsi.
+
+<Image
+  src="/content/bab-6/bab-6-1.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penerapan Fungsi"
+/>
+
+Bagian - bagian dari fungsi:
+
+- Keyword func, digunakan untuk mendeklarasikan sebuah fungsi di 
+Golang, ketika membuat sebuah func kita perlu menyatakan keyword 
+`func` terlebih dahulu.
+
+- Nama fungsi, kita bisa memberikan nama nya sesuai dengan 
+fungsionalitas sebuah fungsi dan juga di usahakan untuk 
+menggunakan bahasa inggris serta `camelCase`.
+
+- Parameters, parameters ini nantinya akan memiliki hubungan erat 
+dengan fungsionalitas, sebuah fungsi bisa berjalan ada atau tiada 
+sebuah parameter. Parameter ditulis dengan menggunakan tanda 
+kurung `()`
+
+- Sebuah fungsi akan selalu di bungkus dengan kurung kurawal `{ }` yang 
+nantinya akan menampung semua fungsionalitas fungsi Anda yang berada pada dalam fungsi.
+
+Berikut penerapan sebuah fungsi yang dibuat.
+
+<Image
+  src="/content/bab-6/bab-6-2.png"
+  width="618"
+  height="304"
+  alt="Sintaks Penerapan Fungsi 2"
+/>
+
+Pada penerapan kali ini, kita membuat sebuah fungsi dengan nama 
+greeting yang isinya akan menampilkan `Hello World`, perlu diketahui 
+urutan pembuatan sebuah fungsi tidak akan mempengaruhi karena Golang 
+sendiri memakai compiler untuk menjalankan kodenya. Lalu untuk 
+memanggil fungsi yang kita buat kita bisa memanggil fungsi tersebut di 
+fungsi main dengan format nama fungsi serta parameter. Ketika program 
+di jalankan maka akan menampilkan `Hello World` yang berada pada fungsi 
+`greetings`.

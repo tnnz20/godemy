@@ -1,0 +1,151 @@
+---
+title: Variable
+chapter: 2
+description: Materi tentang Variable pada Golang
+---
+
+Dalam computer programming, variabel adalah sebuah lokasi penyimpanan
+abstrak yang dipasangkan dengan nama **_identifier_**, yang berisi beberapa
+kuantitas informasi yang diketahui atau tidak diketahui yang disebut
+sebagai value **_nilai_** atau data
+
+<Image
+  src="/content/bab-2/bab-2-1.png"
+  width="718"
+  height="404"
+  alt="Ilustrasi Konsep Variabel"
+/>
+
+Pembuatan variabel bertujuan untuk menyiapkan sebuah tempat atau
+wadah di dalam memori yang bisa diisi dengan nilai, nilai itu sendiri
+memiliki berbagai macam jenis, keragaman jenis nilai ini akan dikenal
+dengan sebutan Data Types **_Tipe Data_**. Setiap variabel memiliki **_memory
+address_** (lokasi memori) masing-masing, dengan adanya**_memory address_** ini
+komputer akan tahu variabel apa yang ingin kita gunakan.
+Golang sendiri mengadopsi dua jenis penulisan variabel, yaitu yang
+dituliskan tipe data-nya, dan juga yang tidak. Kedua penulisan tersebut valid
+dan memiliki tujuan yang sama, hanya saja cara penulisannya yang
+berbeda.
+
+## Deklarasi Variabel Dengan Tipe Data
+
+Golang memiliki aturan cukup ketat dalam hal penulisan variabel.
+Ketika deklarasi sebuah variabel menggunakan keyword var, kita
+harus menuliskan juga tipe datanya. Istilah lain dari konsep ini
+adalah **_manifest typing_**.
+Berikut contoh variabel yang tipe datanya harus ditulis
+
+<Image
+  src="/content/bab-2/bab-2-2.png"
+  width="718"
+  height="404"
+  alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data"
+/>
+
+keterangan:
+
+- Keyword var di atas digunakan untuk mendeklarasikan sebuah
+  variabel.
+- nama merupakan identifier atau pengenal dari sebuah variabel
+  yang kita deklarasikan.
+- string merupakan tipe data variabel yang di deklarasikan.
+
+Contoh di atas merupakan cara mendeklarasikan sebuah variabel
+kosong. Untuk memasukan sebuah value (nilai) ke dalam variabel
+ada dua cara, yaitu yang pertama dimasukan saat mendeklarasikan
+sebuah variabel dan kedua adalah dimasukan setelah
+
+mendeklarasikan variabel tersebut. Proses memasukan value atau
+nilai ke dalam variabel biasa di sebut dengan Assignment Value.
+
+### Memasukan Nilai Saat Mendeklarasikan Variable
+
+Untuk memasukan nilai di saat kita mendeklarasikan variable
+kita cukup menambahkan tanda “=” setelah tipe data.
+
+<Image
+  src="/content/bab-2/bab-2-3.png"
+  width="718"
+  height="404"
+  alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data 2"
+/>
+
+### Memasukan Nilai Setelah Mendeklarasikan Variable
+
+Sedangkan untuk memasukan nilai ketika sudah
+mendeklarasikan sebuah variabel cukup menuliskan nama
+variabel lalu di ikuti dengan tanda “=” dan nilai yang ingin
+dimasukan.
+
+<Image
+  src="/content/bab-2/bab-2-4.png"
+  width="718"
+  height="404"
+  alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data 3"
+/>
+
+## Deklarasi Variabel Tanpa Tipe Data
+
+Selain _manifest typing_, Go juga mengadopsi konsep **_type inference_**,
+yaitu metode deklarasi variabel yang tipe data-nya ditentukan oleh
+tipe data value-nya (nilai), yang berarti kita tidak perlu menuliskan
+tipe datanya saat mendeklarasikan variabel, cara ini kontradiktif jika
+dibandingkan dengan cara _manifest typing_. Dengan metode jenis
+ini, keyword var dan tipe data tidak perlu ditulis.
+
+<Image
+  src="/content/bab-2/bab-2-5.png"
+  width="718"
+  height="404"
+  alt="Ilustrasi Deklarasi Variabel Tanpa Tipe Data"
+/>
+
+## Deklarasi Multi Variabel
+
+Go mendukung metode deklarasi banyak variabel secara
+bersamaan, caranya dengan menuliskan variabel-variabel-nya
+dengan pembatas tanda koma `,`. Untuk pengisian nilainya-pun
+diperbolehkan secara bersamaan. Dengan adanya metode ini kita
+bisa menyingkat waktu dalam pendeklarasian sebuah variabel.
+
+<Image
+  src="/content/bab-2/bab-2-6.png"
+  width="718"
+  height="404"
+  alt="Deklarasi Multi Variabel"
+/>
+
+Selain menggunakan _manifest typing_ kita juga bisa menggunakan
+_type inference_ untuk mendeklarasikan multi variabel, selain
+membuat penulisan lebih ringkas dengan menggunakan type
+inference kita bisa menambahkan value dengan tipe data berbeda.
+
+<Image
+  src="/content/bab-2/bab-2-7.png"
+  width="718"
+  height="404"
+  alt="Deklarasi Multi Variabel 2"
+/>
+
+## Menampilkan Value dari Variabel ke Console
+
+Lalu bagaimana cara untuk menampilkan nilai dari variabel yang
+sudah kita deklarasikan ke console? Untuk menampilkannya kita
+bisa memanfaatkan library fmt yang sudah kita kenal pada chapter
+**Your First Program**.
+
+Dengan menggunakan library fmt kita bisa menggunakan salah
+satu method yang tersedia yaitu “println” untuk menampilkan nilai
+variabel yang sudah kita deklarasikan.
+
+```go
+package main
+import "fmt"
+
+func main(){
+    var name string = "Ucok"
+    fmt.Println("Nama saya adalah", name)
+}
+```
+
+latihan

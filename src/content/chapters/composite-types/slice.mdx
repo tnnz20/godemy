@@ -1,0 +1,83 @@
+---
+title: Slice
+chapter: 5
+description: Materi tentang Slice pada Golang
+---
+
+Di dalam bahasa pemrograman Go (Golang), **slice** adalah struktur data
+dinamis dan fleksibel yang merepresentasikan sebagian dari array yang ada
+di bawahnya. Berbeda dengan array, slice tidak dibatasi oleh ukuran tetap
+dan dapat tumbuh atau menyusut sesuai kebutuhan. Slice banyak
+digunakan dalam Go untuk mengelola dan memanipulasi koleksi data. Cara
+pembuatan slice mirip seperti pembuatan array, bedanya tidak perlu
+mendefinisikan jumlah elemen ketika awal deklarasi. Pengaksesan nilai
+elemen-nya juga sama. Contoh Inisialisasi sebuah slice.
+
+<Image src="/content/bab-5/bab-5-10.png" width="618" height="304" alt="Sintaks Inisialisasi Nilai Slice" />
+
+Salah satu perbedaan slice dan array bisa diketahui pada saat deklarasi
+variabel-nya, jika jumlah elemen tidak dituliskan, maka variabel tersebut
+adalah slice.
+
+<Image src="/content/bab-5/bab-5-11.png" width="618" height="304" alt="Perbedaan Array Dengan Slice" />
+
+Anda pasti akan bertanya kalau perbedannya hanya di penentuan alokasi
+pada saat inisialisasi, kenapa tidak menggunakan satu istilah saja? atau
+adakah perbedaan lainnya?
+Sebenarnya slice dan array tidak bisa dibedakan karena merupakan sebuah
+kesatuan. Array adalah kumpulan nilai atau elemen, sedang slice adalah
+referensi tiap elemen tersebut.
+Slice bisa dibentuk dari array yang sudah didefinisikan, caranya dengan
+memanfaatkan teknik 2 index untuk mengambil elemen-nya. Contoh bisa
+dilihat pada gambar berikut.
+
+<Image src="/content/bab-5/bab-5-10.png" width="618" height="304" alt="Sintaks Slicing A Slice" />
+
+Kode `fruits[0:2]` maksudnya adalah pengaksesan elemen dalam slice fruits
+yang dimulai dari indeks ke-0, hingga elemen sebelum indeks ke-2. Elemen
+yang memenuhi kriteria tersebut akan didapat, untuk kemudian disimpan
+pada variabel lain sebagai slice baru. Pada contoh di atas, newFruits adalah
+slice baru yang tercetak dari slice fruits, dengan isi 2 elemen, yaitu `apple`
+dan `grape`
+
+Ketika mengakses elemen array menggunakan satu buah indeks (seperti
+`data[2]`), nilai yang didapat merupakan hasil copy dari referensi aslinya.
+Berbeda dengan pengaksesan elemen menggunakan 2 indeks (seperti
+`data[0:2]`), nilai yang didapat adalah reference elemen atau slice.
+Tabel berikut adalah list operasi operasi menggunakan teknik 2 indeks yang
+bisa dilakukan.
+
+Contoh di bawah menggunakan array fruits yang sudah didefinisikan sebelumnya.
+
+|    Code     |            Output             | Penjelasan                                                                       |
+| :---------: | :---------------------------: | -------------------------------------------------------------------------------- |
+| fruits[0:2] |        [apple, grape]         | semua elemen mulai indeks ke-0, hingga sebelum indeks ke-2                       |
+| fruits[0:4] | [apple, grape, banana,melon]  | semua elemen mulai indeks ke-0, hingga sebelum indeks ke-4                       |
+| fruits[0:0] |              []               | menghasilkan slice kosong, karena tidak ada elemen sebelum indeks ke-0           |
+| fruits[4:4] |              []               | menghasilkan slice kosong, karena tidak ada elemen yang dimulai dari indeks ke-4 |
+| fruits[4:0] |              []               | error, pada penulisan fruits[a:b] nilai a harus lebih kecil atau sama dengan b   |
+|  fruits[:]  | [apple, grape, banana, melon] | semua elemen                                                                     |
+| fruits[2:]  |        [banana, melon]        | semua elemen mulai indeks ke-2                                                   |
+| fruits[:2]  |        [apple, grape]         | semua elemen hingga sebelum indeks ke-2                                          |
+
+Adapun beberapa operasi yang bisa dilakukan pada slice sebagai berikut:
+1. Menambahkan Elemen baru
+  Fungsi `append()` digunakan untuk menambahkan elemen pada slice. 
+  Elemen baru tersebut diposisikan setelah indeks paling akhir. Nilai balik 
+  fungsi ini adalah slice yang sudah ditambahkan nilai barunya. Contoh 
+  penggunaannya bisa dilihat di kode berikut.
+
+  <Image src="/content/bab-5/bab-5-13.png" width="618" height="304" alt="Menambahkan Elemen Baru Pada Slice" />
+
+  Pada contoh di atas kita menambahkan sebuah elemen baru pada 
+  variabel `fruits` dengan nilai `Orange` lalu dimasukan ke dalam variabel 
+  bernama `newFruits`
+
+2. Copy Elemen Slice
+  Fungsi `copy()` digunakan untuk men-copy elements slice pada src (parameter ke-2), ke dst (parameter pertama).
+
+  <Image src="/content/bab-5/bab-5-14.png" width="618" height="304" alt="Menambahkan Copy Elemen ke Slice" />
+
+  Jumlah element yang di-copy dari basket2 adalah sejumlah lebar slice 
+  basket1. Jika jumlah slice pada basket2 lebih kecil dari basket1, maka 
+  akan ter-copy semua.
