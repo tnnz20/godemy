@@ -9,14 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^2.0.0",
     "contentlayer": "^0.3.4",
     "next": "13.5.2",
     "next-contentlayer": "^0.3.4",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "rehype-pretty-code": "^0.10.2",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^3.0.1",
+    "shiki": "^0.14.5",
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@types/mdx": "^2.0.10",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
