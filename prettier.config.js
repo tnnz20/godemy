@@ -3,6 +3,8 @@ module.exports = {
   endOfLine: "lf",
   semi: false,
   singleQuote: false,
+  tslintIntegration: true,
+  eslintIntegration: true,
   tabWidth: 2,
   trailingComma: "es5",
   importOrder: [
