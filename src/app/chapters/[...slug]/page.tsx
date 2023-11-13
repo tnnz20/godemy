@@ -3,7 +3,7 @@ import { allChapters } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
 
-import { Mdx } from "@/app/components/mdx-components"
+import { Mdx } from "@/components/mdx-components"
 
 interface PageProps {
   params: {
