@@ -124,7 +124,7 @@ function TableData({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTa
 
 function AnchorLink({ className, ...props }: Readonly<React.HTMLAttributes<HTMLAnchorElement>>) {
   return (
-    <a className={cn("font-medium underline underline-offset-4", className)} href={props.href} target="_blank">
+    <a className={cn("font-medium underline underline-offset-4", className)} {...props}>
       {props.children}
     </a>
   )
