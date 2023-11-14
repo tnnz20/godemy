@@ -19,6 +19,7 @@
         "name": "next"
       }
     ],
+    "noImplicitAny": false,
     "paths": {
       "@/*": ["./src/*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
