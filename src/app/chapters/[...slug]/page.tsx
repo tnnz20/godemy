@@ -4,6 +4,7 @@ import { allChapters } from "contentlayer/generated"
 import "@/styles/mdx.css"
 
 import { Mdx } from "@/components/mdx-components"
+import { Pager } from "@/components/pager"
 
 interface PageProps {
   params: {
@@ -20,7 +21,7 @@ async function getChapterFromParams(params: string[]) {
   return chapter
 }
 
-export default async function page(prop: PageProps) {
+export default async function Page(prop: PageProps) {
   const chapter = await getChapterFromParams(prop.params?.slug)
 
   return (
@@ -28,6 +29,8 @@ export default async function page(prop: PageProps) {
       <div className="space-y-3">
         <h1 className="font-heading my-2 inline-block text-4xl lg:text-5xl">{chapter.title}</h1>
         <Mdx code={chapter.body.code} />
+        <hr className="my-4 md:my-6" />
+        <Pager chapter={chapter} />
       </div>
     </main>
   )
