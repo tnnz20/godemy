@@ -12,7 +12,6 @@ import {
   Image,
   Laptop,
   Loader2,
-  LucideIcon,
   LucideProps,
   Moon,
   MoreVertical,
@@ -25,8 +24,6 @@ import {
   User,
   X,
 } from "lucide-react"
-
-export type Icon = LucideIcon
 
 export const Icons = {
   logo: Command,
