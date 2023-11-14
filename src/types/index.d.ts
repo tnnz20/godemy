@@ -8,7 +8,7 @@ export type SidebarNavItem = {
     }
   | {
       path?: string
-      items: NavLink[]
+      items: { title: string; path: string }[]
     }
 )
 

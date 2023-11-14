@@ -9,7 +9,7 @@ import { Button } from "./ui/button"
 interface PagerProps {
   chapter: Chapter
 }
-export function Pager({ chapter }: PagerProps) {
+export function Pager({ chapter }: Readonly<PagerProps>) {
   const pager = getPagerForDoc(chapter)
 
   if (!pager) return null
@@ -47,8 +47,16 @@ export function getPagerForDoc(chapter: Chapter) {
     next,
   }
 }
-export function flatten(links: { items? }[]) {
-  return links.reduce((flat, link) => {
-    return flat.concat(link.items ? flatten(link.items) : link)
+
+// export function flatten(links: { items?: [] }[]) {
+//   console.log(links)
+//   return links.reduce((flat, link) => {
+//     return flat.concat(link.items ? flatten(link.items) : link)
+//   }, [])
+// }
+
+export function flatten<T>(links: { items?: T }[]): T[] {
+  return links.reduce((flat: T[], link) => {
+    return flat.concat(link.items ? flatten(link.items) : (link as T))
   }, [])
 }
