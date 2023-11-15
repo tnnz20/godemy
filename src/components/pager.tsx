@@ -24,7 +24,7 @@ export function Pager({ chapter }: Readonly<PagerProps>) {
         </Link>
       )}
       {pager?.next && (
-        <Link href={pager.next.path} className={cn(buttonVariants({ variant: "ghost" }))}>
+        <Link href={pager.next.path} className={cn(buttonVariants({ variant: "ghost" }), "ml-auto")}>
           {pager.next.title}
           <Icons.ChevronRight className="ml-2 h-4 w-4" />
         </Link>
