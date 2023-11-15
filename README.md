@@ -24,11 +24,13 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## TO-DO TASK
 
-- [ ] Implement MDX using Content Layer
-- [ ] Styling MDX
-- [ ] Implement [Shadcn/UI](https://ui.shadcn.com/)
+- [x] Implement MDX using Content Layer
+- [x] Implement Navigation (Pager & Sidebar)
+- [x] Implement [Shadcn/UI](https://ui.shadcn.com/)
+- [ ] Styling MDX - Ongoing
 - [ ] Make Landing Page
 - [ ] Make Dashboard
-- [ ] Add Feature Quiz
+- [ ] Add interactive Function MDX (Quiz, Compiler)
+- [ ] Login Page
 - TBC
   
