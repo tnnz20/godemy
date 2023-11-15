@@ -17,7 +17,7 @@ export function Callout({ children, icon, type = "default", ...props }: Readonly
       })}
       {...props}
     >
-      <Icons.warning className="mr-2 h-4 w-4" />
+      <Icons.Warning className="mr-2 h-4 w-4" />
       <div>{children}</div>
     </div>
   )
