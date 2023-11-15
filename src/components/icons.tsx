@@ -11,6 +11,7 @@ import {
   HelpCircle,
   Image,
   Laptop,
+  List,
   Loader2,
   LucideProps,
   Moon,
@@ -26,6 +27,7 @@ import {
 } from "lucide-react"
 
 export const Icons = {
+  List: List,
   logo: Command,
   close: X,
   spinner: Loader2,
