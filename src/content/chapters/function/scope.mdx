@@ -14,32 +14,38 @@ dan melindungi variabel dari tabrakan dan membuat kode lebih terstruktur.
 Dalam bahasa pemrograman Golang, ada beberapa tingkat scope yang 
 umumnya digunakan:
 
-## Block Scope: Variabel dengan block scope hanya dapat diakses di dalam 
+## Block Scope
+
+Variabel dengan block scope hanya dapat diakses di dalam 
 blok di mana mereka dideklarasikan. Blok dapat berupa fungsi, 
 perulangan, atau kondisional.
 
 Sebagai contoh:
 
-<Image src="/content/bab-6/bab-6-7.png" width="618" height="304" alt="Block Scope" />
+    <Image src="/content/bab-6/bab-6-7.png" width="815" height="400" alt="Block Scope" />
 
 Pada contoh di atas kita mendeklarasikan sebuah variabel dengan nama 
 “hasil” yang berada pada fungsi “sum”. Ketika kita mencoba mengakses 
 variabel tersebut di fungsi main maka akan terdapat error yang mana 
 variabel “hasil” belum terdeklarasi. 
 
-## Package Scope: Variabel dengan package scope dapat diakses di 
+## Package Scope
+
+Variabel dengan package scope dapat diakses di 
 seluruh package tempat mereka dideklarasikan.
 
 Sebagai contoh:
 
-<Image src="/content/bab-6/bab-6-8.png" width="618" height="304" alt="Package Scope" />
+    <Image src="/content/bab-6/bab-6-8.png" width="815" height="400" alt="Package Scope" />
 
 Pada contoh di atas kita mendeklarasikan variabel `five` pada Package 
 Scope ketika kita mencoba mengakses variabel tersebut tidak terdapat 
 error. Berbeda ketika kita mencoba mendeklarasikan variabel didalam 
 block scope.
 
-## Universal Scope: Beberapa bahasa pemrograman juga mendukung 
+## Universal Scope
+
+Beberapa bahasa pemrograman juga mendukung 
 universal scope, yang berarti variabel tersebut dapat diakses di seluruh 
 program. Untuk mengakses universal scope diperlukan import terlebih 
 dahulu.
