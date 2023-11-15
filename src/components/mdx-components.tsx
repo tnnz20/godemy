@@ -98,7 +98,7 @@ function TableRow({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTab
   return <tr className={cn("m-0 border-t p-0 even:bg-muted even:font-semibold", className)} {...props} />
 }
 
-function TableHeader({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTableHeaderCellElement>>) {
+function TableHeader({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTableCellElement>>) {
   return (
     <th
       className={cn(
@@ -110,7 +110,7 @@ function TableHeader({ className, ...props }: Readonly<React.HTMLAttributes<HTML
   )
 }
 
-function TableData({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTableDataCellElement>>) {
+function TableData({ className, ...props }: Readonly<React.HTMLAttributes<HTMLTableCellElement>>) {
   return (
     <td
       className={cn(
