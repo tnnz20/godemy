@@ -3,6 +3,8 @@ import { allChapters, Chapter } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
 
+import { Metadata } from "next"
+
 import { Mdx } from "@/components/mdx-components"
 import { Pager } from "@/components/pager"
 
@@ -18,6 +20,15 @@ async function getChapterFromParams(params: string[]) {
   if (!chapter) notFound()
 
   return chapter
+}
+
+export async function generateMetadata(props: PageProps): Promise<Metadata> {
+  const chapter = await getChapterFromParams(props.params?.slug)
+
+  return {
+    title: chapter.title,
+    description: chapter.description,
+  }
 }
 
 export default async function ChapterPage(prop: Readonly<PageProps>) {

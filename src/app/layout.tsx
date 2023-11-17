@@ -4,6 +4,8 @@ import localFont from "next/font/local"
 
 import { cn } from "@/lib/utils"
 
+import { siteConfig } from "../config/site"
+
 import "@/styles/globals.css"
 
 const inter = Inter({
@@ -17,9 +19,11 @@ const fontHeading = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Godemy",
-  description:
-    "Godemy is a place where you can elevate your programming skills to the next level, with a particular focus on mastering Golang. Our platform is designed to provide expert guidance, guiding you through every aspect of Golang attentively. Join now and gain your Golang skills in Godemy!",
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
 }
 
 interface RootLayoutProps {
