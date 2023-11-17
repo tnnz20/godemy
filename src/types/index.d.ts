@@ -3,12 +3,12 @@ export type SidebarNavItem = {
   disabled?: boolean
 } & (
   | {
-      path: string
+      href: string
       items?: never
     }
   | {
-      path?: string
-      items: { title: string; path: string }[]
+      href?: string
+      items: { title: string; href: string }[]
     }
 )
 

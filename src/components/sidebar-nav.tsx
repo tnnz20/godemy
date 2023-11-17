@@ -39,12 +39,12 @@ export function ChapterSidebarNavItem({ items, pathname }: ChapterSidebarNavItem
   return items.length ? (
     <AccordionContent className={cn("ml-3")}>
       {items.map((item, index) =>
-        !item.disabled && item.path ? (
+        !item.disabled && item.href ? (
           <Link
             key={index}
-            href={item.path}
+            href={item.href}
             className={cn("flex w-full items-center rounded-md p-2 hover:underline", {
-              "bg-muted": pathname === item.path,
+              "bg-muted": pathname === item.href,
             })}
           >
             {item.title}

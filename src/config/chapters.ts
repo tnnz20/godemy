@@ -7,23 +7,23 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          path: "/chapters/your-first-program/pendahuluan",
+          href: "/chapters/your-first-program/pendahuluan",
         },
         {
           title: "Sejarah Golang",
-          path: "/chapters/your-first-program/sejarah-golang",
+          href: "/chapters/your-first-program/sejarah-golang",
         },
         {
           title: "Kelebihan Golang",
-          path: "/chapters/your-first-program/kelebihan-golang",
+          href: "/chapters/your-first-program/kelebihan-golang",
         },
         {
           title: "Program Pertama",
-          path: "/chapters/your-first-program/program-pertama",
+          href: "/chapters/your-first-program/program-pertama",
         },
         {
           title: "Komentar",
-          path: "/chapters/your-first-program/komentar",
+          href: "/chapters/your-first-program/komentar",
         },
       ],
     },
@@ -32,19 +32,19 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          path: "/chapters/variable-data-types-operators/pendahuluan",
+          href: "/chapters/variable-data-types-operators/pendahuluan",
         },
         {
           title: "Variabel",
-          path: "/chapters/variable-data-types-operators/variable",
+          href: "/chapters/variable-data-types-operators/variable",
         },
         {
           title: "Data Types",
-          path: "/chapters/variable-data-types-operators/data-types",
+          href: "/chapters/variable-data-types-operators/data-types",
         },
         {
           title: "Operators",
-          path: "/chapters/variable-data-types-operators/operators",
+          href: "/chapters/variable-data-types-operators/operators",
         },
       ],
     },
@@ -53,23 +53,23 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          path: "/chapters/control-flow/pendahuluan",
+          href: "/chapters/control-flow/pendahuluan",
         },
         {
           title: "Control Flow",
-          path: "/chapters/control-flow/control-flow",
+          href: "/chapters/control-flow/control-flow",
         },
         {
           title: "Percabangan If - Else",
-          path: "/chapters/control-flow/percabangan-if-else",
+          href: "/chapters/control-flow/percabangan-if-else",
         },
         {
           title: "Switch Case",
-          path: "/chapters/control-flow/switch-case",
+          href: "/chapters/control-flow/switch-case",
         },
         {
           title: "Nested Control Flow",
-          path: "/chapters/control-flow/nested-control-flow",
+          href: "/chapters/control-flow/nested-control-flow",
         },
       ],
     },
@@ -78,27 +78,27 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          path: "/chapters/looping/pendahuluan",
+          href: "/chapters/looping/pendahuluan",
         },
         {
           title: "Looping",
-          path: "/chapters/looping/looping",
+          href: "/chapters/looping/looping",
         },
         {
           title: "Standard For",
-          path: "/chapters/looping/standard-for",
+          href: "/chapters/looping/standard-for",
         },
         {
           title: "For With Condition Only",
-          path: "/chapters/looping/for-with-condition-only",
+          href: "/chapters/looping/for-with-condition-only",
         },
         {
           title: "For Without Arguments",
-          path: "/chapters/looping/for-without-arguments",
+          href: "/chapters/looping/for-without-arguments",
         },
         {
           title: "For Range",
-          path: "/chapters/looping/for-range",
+          href: "/chapters/looping/for-range",
         },
       ],
     },
@@ -107,27 +107,27 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          path: "/chapters/composite-types/pendahuluan",
+          href: "/chapters/composite-types/pendahuluan",
         },
         {
           title: "Tipe Komposit",
-          path: "/chapters/composite-types/tipe-komposit",
+          href: "/chapters/composite-types/tipe-komposit",
         },
         {
           title: "Array",
-          path: "/chapters/composite-types/array",
+          href: "/chapters/composite-types/array",
         },
         {
           title: "Slice",
-          path: "/chapters/composite-types/slice",
+          href: "/chapters/composite-types/slice",
         },
         {
           title: "Map",
-          path: "/chapters/composite-types/map",
+          href: "/chapters/composite-types/map",
         },
         {
           title: "Struct",
-          path: "/chapters/composite-types/struct",
+          href: "/chapters/composite-types/struct",
         },
       ],
     },
@@ -136,31 +136,31 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          path: "/chapters/function/pendahuluan",
+          href: "/chapters/function/pendahuluan",
         },
         {
           title: "Function",
-          path: "/chapters/function/function",
+          href: "/chapters/function/function",
         },
         {
           title: "Parameters",
-          path: "/chapters/function/parameters",
+          href: "/chapters/function/parameters",
         },
         {
           title: "Return Value",
-          path: "/chapters/function/return-value",
+          href: "/chapters/function/return-value",
         },
         {
           title: "Scope",
-          path: "/chapters/function/scope",
+          href: "/chapters/function/scope",
         },
         {
           title: "Function Variadic",
-          path: "/chapters/function/function-variadic",
+          href: "/chapters/function/function-variadic",
         },
         {
           title: "Function Closure",
-          path: "/chapters/function/function-closure",
+          href: "/chapters/function/function-closure",
         },
       ],
     },
