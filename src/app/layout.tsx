@@ -17,8 +17,9 @@ const fontHeading = localFont({
 })
 
 export const metadata: Metadata = {
-  title: "Gozy Learning",
-  description: "Gozy Learning is a platform for learning and teaching programming languages.",
+  title: "Godemy",
+  description:
+    "Godemy is a place where you can elevate your programming skills to the next level, with a particular focus on mastering Golang. Our platform is designed to provide expert guidance, guiding you through every aspect of Golang attentively. Join now and gain your Golang skills in Godemy!",
 }
 
 interface RootLayoutProps {
