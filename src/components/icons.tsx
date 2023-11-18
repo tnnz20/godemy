@@ -46,9 +46,9 @@ export const Icons = {
   arrowRight: ArrowRight,
   help: HelpCircle,
   pizza: Pizza,
-  sun: SunMedium,
-  moon: Moon,
-  laptop: Laptop,
+  Sun: SunMedium,
+  Moon: Moon,
+  Laptop: Laptop,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"
