@@ -1,10 +1,10 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Inter, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
+import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
-
-import { siteConfig } from "../config/site"
+import { ThemeProvider } from "@/components/theme.provider"
 
 import "@/styles/globals.css"
 
@@ -14,8 +14,13 @@ const inter = Inter({
 })
 
 const fontHeading = localFont({
-  src: "../assets/fonts/CalSans-SemiBold.woff2",
+  src: "../../public/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
+})
+
+const fontLogo = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-logo",
 })
 
 export const metadata: Metadata = {
@@ -33,8 +38,17 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
-      <body className={cn("min-h-screen bg-background antialiased", inter.variable, fontHeading.variable)}>
-        {children}
+      <body
+        className={cn(
+          "min-h-screen bg-background antialiased",
+          inter.variable,
+          fontHeading.variable,
+          fontLogo.variable
+        )}
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
