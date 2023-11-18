@@ -6,13 +6,15 @@ import "@/styles/mdx.css"
 import { Metadata } from "next"
 
 import { Mdx } from "@/components/mdx-components"
-import { Pager } from "@/components/pager"
+import { Pager } from "@/app/chapters/_components/pager"
 
 interface PageProps {
   params: {
     slug: string[]
   }
 }
+
+// TODO: Fix Styling
 
 async function getChapterFromParams(params: string[]) {
   const slug = params.join("/")
@@ -37,7 +39,7 @@ export default async function ChapterPage(prop: Readonly<PageProps>) {
   return (
     <main className="container max-w-4xl py-6 lg:py-12">
       <div className="space-y-3">
-        <h1 className="my-2 inline-block font-heading text-4xl lg:text-5xl">{chapter.title}</h1>
+        <h1 className="my-5 inline-block font-heading text-4xl lg:text-5xl">{chapter.title}</h1>
         <Mdx code={chapter.body.code} />
         <hr className="my-4 md:my-6" />
         <Pager chapter={chapter} />

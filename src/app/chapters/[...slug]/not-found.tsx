@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 
+// TODO: Fix Styling
+
 export default function NotFound() {
   const router = useRouter()
   return (

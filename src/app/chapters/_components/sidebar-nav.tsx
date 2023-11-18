@@ -12,6 +12,8 @@ interface ChapterSidebarNavProps {
   items: SidebarNavItem[]
 }
 
+// TODO: Fix Styling
+
 export function ChapterSidebarNav({ items }: ChapterSidebarNavProps) {
   const pathname = usePathname()
 
