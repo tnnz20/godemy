@@ -5,7 +5,7 @@ import { Chapter } from "contentlayer/generated"
 import { chaptersConfig } from "@/config/chapters"
 import { Icons } from "@/components/icons"
 
-import { Button } from "./ui/button"
+import { Button } from "../../../components/ui/button"
 
 interface PagerProps {
   chapter: Chapter

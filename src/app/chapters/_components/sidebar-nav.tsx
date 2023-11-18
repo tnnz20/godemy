@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation"
 import { SidebarNavItem } from "@/types/index"
 import { cn } from "@/lib/utils"
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../../components/ui/accordion"
 
 interface ChapterSidebarNavProps {
   items: SidebarNavItem[]
