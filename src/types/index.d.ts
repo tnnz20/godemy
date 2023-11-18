@@ -8,6 +8,11 @@ export type SiteConfig = {
   }
 }
 
+export type HomeConfig = {
+  title: string
+  href: string
+}[]
+
 export type SidebarNavItem = {
   title: string
   disabled?: boolean
