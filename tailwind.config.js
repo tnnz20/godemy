@@ -70,6 +70,7 @@ module.exports = {
       fontFamily: {
         inter: ["var(--font-inter)", ...fontFamily.sans],
         heading: ["var(--font-heading)", ...fontFamily.sans],
+        logo: ["var(--font-logo)", ...fontFamily.sans],
       },
     },
   },
