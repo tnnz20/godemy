@@ -23,7 +23,7 @@ export type SidebarNavItem = {
     }
   | {
       href?: string
-      items: { title: string; href: string }[]
+      items: { title: string; href: string; disabled?: boolean }[]
     }
 )
 
