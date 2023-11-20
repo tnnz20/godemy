@@ -3,9 +3,8 @@ import { SidebarNavItem } from "@/types"
 import { Chapter } from "contentlayer/generated"
 
 import { chaptersConfig } from "@/config/chapters"
+import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
-
-import { Button } from "../../../components/ui/button"
 
 interface PagerProps {
   chapter: Chapter

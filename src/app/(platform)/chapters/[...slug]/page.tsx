@@ -6,7 +6,8 @@ import "@/styles/mdx.css"
 import { Metadata } from "next"
 
 import { Mdx } from "@/components/mdx-components"
-import { Pager } from "@/app/chapters/_components/pager"
+
+import { Pager } from "../_components/pager"
 
 interface PageProps {
   params: {

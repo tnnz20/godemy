@@ -5,8 +5,7 @@ import { usePathname } from "next/navigation"
 
 import { SidebarNavItem } from "@/types/index"
 import { cn } from "@/lib/utils"
-
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../../components/ui/accordion"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 interface ChapterSidebarNavProps {
   items: SidebarNavItem[]
@@ -17,20 +16,23 @@ interface ChapterSidebarNavProps {
 export function ChapterSidebarNav({ items }: ChapterSidebarNavProps) {
   const pathname = usePathname()
 
+  const currentOpenPage = items.find((section) => section.items?.some((item) => item.href === pathname))
+  const currentIndexPage = items.findIndex((section) => section?.title === currentOpenPage?.title)
+
   return items.length ? (
-    <div className="w-full">
-      <Accordion type="single" collapsible className={cn()}>
-        {items.map((item, index) => (
-          <div key={index}>
-            <AccordionItem value={"item" + index}>
-              <AccordionTrigger className={cn("my-2 ml-3")}>{item.title}</AccordionTrigger>
-              {item.items ? <ChapterSidebarNavItem items={item.items} pathname={pathname} /> : null}
-            </AccordionItem>
-          </div>
-        ))}
-      </Accordion>
-    </div>
-  ) : null
+    // <div className="w-full px-2">
+    <Accordion type="single" defaultValue={`item-${currentIndexPage}`} collapsible>
+      {items.map((item, index) => (
+        <div key={index}>
+          <AccordionItem value={"item-" + index} className="m-2">
+            <AccordionTrigger className={cn("flex gap-4")}>{item.title}</AccordionTrigger>
+            {item.items ? <ChapterSidebarNavItem items={item.items} pathname={pathname} /> : null}
+          </AccordionItem>
+        </div>
+      ))}
+    </Accordion>
+  ) : // </div>
+  null
 }
 
 interface ChapterSidebarNavItem extends ChapterSidebarNavProps {
