@@ -29,6 +29,11 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  icons: [
+    {
+      url: "/Icon.svg",
+    },
+  ],
 }
 
 interface RootLayoutProps {
@@ -46,7 +51,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           fontLogo.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
       </body>
