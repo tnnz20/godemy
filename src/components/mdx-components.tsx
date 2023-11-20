@@ -46,11 +46,7 @@ interface MdxProps {
 export function Mdx({ code }: Readonly<MdxProps>) {
   const Component = useMDXComponent(code)
 
-  return (
-    <article className="mdx">
-      <Component components={components} />
-    </article>
-  )
+  return <Component components={components} />
 }
 
 function H1({ className, ...props }: Readonly<React.HTMLAttributes<HTMLHeadingElement>>) {

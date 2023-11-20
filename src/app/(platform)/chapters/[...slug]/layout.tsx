@@ -14,9 +14,7 @@ export default function DocsLayout({ children }: Readonly<DocsLayoutProps>) {
     <div>
       <Navbar items={chaptersConfig.sideNav} />
       <div className="flex">
-        <aside className="fixed top-14 z-30 hidden h-[calc(100vh-3.5rem)] overflow-y-auto border-r px-4 py-6 md:sticky md:block">
-          <ChapterSidebarNav items={chaptersConfig.sideNav} />
-        </aside>
+        <ChapterSidebarNav items={chaptersConfig.sideNav} />
         <div className="flex-1">{children}</div>
       </div>
     </div>
