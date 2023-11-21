@@ -38,7 +38,7 @@ export default async function ChapterPage(prop: Readonly<PageProps>) {
   const chapter: Chapter = await getChapterFromParams(prop.params?.slug)
 
   return (
-    <main className="container mt-4 h-full max-w-5xl py-0 lg:py-5">
+    <main className="container my-12 max-w-5xl  lg:my-8 lg:py-5">
       <div className="mx-auto w-full min-w-0 space-y-3">
         <h1 className="my-5 inline-block font-heading text-4xl lg:text-5xl">{chapter.title}</h1>
         <article className="h-full">

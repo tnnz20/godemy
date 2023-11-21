@@ -26,26 +26,31 @@ export function ChapterSidebarNav({ items }: Readonly<ChapterSidebarNavProps>) {
   const [showSideNav, setShowSideNav] = useState<boolean>(true)
   return (
     <div>
-      <Button
-        onClick={() => setShowSideNav(true)}
-        className={cn("border-r-lg fixed -left-2 top-20 z-50 hidden md:inline-block", {
-          "font-medium md:hidden": showSideNav,
-        })}
-      >
-        <Icons.List className={cn("rotate-180")} />
-      </Button>
+      {!showSideNav ? (
+        <Button
+          onClick={() => setShowSideNav(true)}
+          className={cn("border-r-lg fixed -right-2 top-20 z-50 hidden md:inline-block", {
+            "": showSideNav,
+          })}
+        >
+          <Icons.List className={cn("rotate-180")} />
+        </Button>
+      ) : null}
 
       {items.length ? (
         <nav
-          className={cn("fixed -left-1/2 top-14 z-30  hidden h-screen border-r px-4 py-6 md:block", {
-            "sticky bottom-0 left-0 animate-in slide-in-from-left-1/2": showSideNav,
-          })}
+          className={cn(
+            "fixed -left-1/2 top-14 z-30  hidden h-[calc(100vh-3.5rem)] overflow-y-auto border-l px-4 py-6  md:block",
+            {
+              "sticky bottom-0 left-0 animate-in slide-in-from-right-1/2": showSideNav,
+            }
+          )}
         >
-          <div className="flex items-center justify-between">
-            <h3 className="font-heading text-xl font-bold">Silabus</h3>
-            <Button variant={"ghost"} className={cn("")} onClick={() => setShowSideNav(false)}>
+          <div className="mr-2 flex items-center justify-between">
+            <Button variant={"ghost"} className={cn("px-1 transition")} onClick={() => setShowSideNav(false)}>
               <Icons.Close />
             </Button>
+            <h3 className=" text-xl font-bold">Daftar Silabus</h3>
           </div>
           <Accordion type="single" defaultValue={`item-${currentIndexPage}`} collapsible>
             {items.map((item, index) => (
