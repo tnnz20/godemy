@@ -47,7 +47,7 @@ export function ChapterSidebarNav({ items }: Readonly<ChapterSidebarNavProps>) {
           )}
         >
           <div className="mr-2 flex items-center justify-between">
-            <Button variant={"ghost"} className={cn("px-1 transition")} onClick={() => setShowSideNav(false)}>
+            <Button variant="ghost" size="icon" className={cn("px-1 transition")} onClick={() => setShowSideNav(false)}>
               <Icons.Close />
             </Button>
             <h3 className=" text-xl font-bold">Daftar Silabus</h3>
