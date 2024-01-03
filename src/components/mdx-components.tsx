@@ -6,7 +6,9 @@ import { useMDXComponent } from "next-contentlayer/hooks"
 import { cn } from "@/lib/utils"
 
 import { Callout } from "./callout"
+import { Compiler } from "./compiler"
 import { MdxCard } from "./mdx-card"
+import { Quiz } from "./quiz"
 
 const components: MDXComponents = {
   h1: H1,
@@ -37,6 +39,8 @@ const components: MDXComponents = {
     )
   },
   Card: MdxCard,
+  Quiz: Quiz,
+  Compiler: Compiler,
 }
 
 interface MdxProps {
