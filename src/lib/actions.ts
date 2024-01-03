@@ -1,5 +1,6 @@
 "use server"
 
+import { cookies } from "next/headers"
 import { z } from "zod"
 
 const LoginSchema = z.object({
@@ -9,11 +10,9 @@ const LoginSchema = z.object({
         "Invalid email: mohon masukan format email yang benar.",
     })
     .email(),
-  password: z
-    .string({
-      invalid_type_error: "Invalid password: password minimal 6 karakter.",
-    })
-    .min(6),
+  password: z.string().min(6, {
+    message: "Invalid password: password minimal 6 karakter.",
+  }),
 })
 
 const RegisterSchema = z.object({
@@ -68,15 +67,39 @@ export async function signIn(prevState: LoginState, formData: FormData) {
   if (!validateFields.success) {
     return {
       errors: validateFields.error.flatten().fieldErrors,
-      message: "Ada field yang belum terisi. Gagal masuk!.",
+      message: "Gagal masuk!. Ada field yang belum terpenuhi.",
     }
   }
 
-  console.log(validateFields.data)
-
   const { email, password } = validateFields.data
-  console.log(email)
-  console.log(password)
+  try {
+    const response = await fetch(`${process.env.BASE_DIR}/auth/sign-in`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    })
 
-  // const response = await fetch()
+    const data = await response.json()
+
+    if (response.ok) {
+      const token = data.data.access_token
+      cookies().set({
+        name: "token",
+        secure: true,
+        value: token,
+        httpOnly: true,
+        path: "/",
+        maxAge: 60 * 60,
+      })
+    } else {
+      return {
+        errors: "",
+        message: "Email tidak terdaftar.",
+      }
+    }
+  } catch (error) {
+    console.error(error)
+  }
 }
