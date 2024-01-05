@@ -7,8 +7,8 @@ import { cn } from "@/lib/utils"
 
 import { Callout } from "./callout"
 import { Compiler } from "./compiler"
+import { Exercise } from "./exercise"
 import { MdxCard } from "./mdx-card"
-import { Quiz } from "./quiz"
 
 const components: MDXComponents = {
   h1: H1,
@@ -39,7 +39,7 @@ const components: MDXComponents = {
     )
   },
   Card: MdxCard,
-  Quiz: Quiz,
+  Exercise: Exercise,
   Compiler: Compiler,
 }
 

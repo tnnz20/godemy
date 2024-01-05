@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils"
-
-import { Icons } from "./icons"
+import { Icons } from "@/components/icons"
 
 interface CalloutProps {
   icon?: string
