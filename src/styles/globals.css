@@ -33,6 +33,12 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --optionCircle: #e0f0ff;
+    --optionAnswer: #1977db;
+
+    --activeOptionCircle: #0068d6;
+    --activeOptionAnswer: #f0f7ff;
   }
 
   .dark {
@@ -63,6 +69,12 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --optionCircle: #0f2f57;
+    --optionAnswer: #52a8ff;
+
+    --activeOptionCircle: #0f1c2e;
+    --activeOptionAnswer: #52a8ff;
   }
 }
 
@@ -71,6 +83,6 @@
     @apply border-border;
   }
   body {
-    @apply font-inter bg-background text-foreground;
+    @apply bg-background font-inter text-foreground;
   }
 }
