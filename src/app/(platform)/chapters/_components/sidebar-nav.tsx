@@ -18,12 +18,11 @@ interface ChapterSidebarNavProps {
 
 export function ChapterSidebarNav({ items }: Readonly<ChapterSidebarNavProps>) {
   const pathname = usePathname()
+  const [showSideNav, setShowSideNav] = useState<boolean>(true)
 
   const currentOpenPage = items.find((section) => section.items?.some((item) => item.href === pathname))
   const currentIndexPage = items.findIndex((section) => section?.title === currentOpenPage?.title)
-  console.log("🚀 ~ file: sidebar-nav.tsx:24 ~ ChapterSidebarNav ~ currentIndexPage:", currentIndexPage)
 
-  const [showSideNav, setShowSideNav] = useState<boolean>(true)
   return (
     <div>
       {!showSideNav ? (
