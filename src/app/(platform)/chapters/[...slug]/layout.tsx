@@ -7,8 +7,6 @@ interface DocsLayoutProps {
   children: React.ReactNode
 }
 
-// TODO: Fix Styling
-
 export default function DocsLayout({ children }: Readonly<DocsLayoutProps>) {
   return (
     <div className="flex flex-col gap-2">
