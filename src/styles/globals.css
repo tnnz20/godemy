@@ -39,6 +39,12 @@
 
     --activeOptionCircle: #0068d6;
     --activeOptionAnswer: #f0f7ff;
+
+    --correctBadgeResult: #ebfaeb;
+    --correctBadgeResultText: #297a31;
+
+    --wrongBadgeResult: #fff4d6;
+    --wrongBadgeResultText: #a35200;
   }
 
   .dark {
@@ -75,6 +81,12 @@
 
     --activeOptionCircle: #0f1c2e;
     --activeOptionAnswer: #52a8ff;
+
+    --correctBadgeResult: #0f2e18;
+    --correctBadgeResultText: #62c073;
+
+    --wrongBadgeResult: #331b00;
+    --wrongBadgeResultText: #ff990a;
   }
 }
 

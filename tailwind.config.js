@@ -23,6 +23,10 @@ module.exports = {
         activeOptionCircle: "var(--activeOptionCircle)",
         optionAnswer: "var(--optionAnswer)",
         activeOptionAnswer: "var(--activeOptionAnswer)",
+        correctBadgeResult: "var(--correctBadgeResult)",
+        correctBadgeResultText: "var(--correctBadgeResultText)",
+        wrongBadgeResult: "var(--wrongBadgeResult)",
+        wrongBadgeResultText: "var(--wrongBadgeResultText)",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
