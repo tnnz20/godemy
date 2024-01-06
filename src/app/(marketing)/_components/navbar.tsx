@@ -10,7 +10,7 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 flex h-14 w-full items-center border-b  px-4 shadow-sm ">
       <div className="mx-auto flex w-full items-center justify-between md:max-w-screen-2xl">
         <Logo />
-        <div className="hidden md:block">
+        {/* <div className="ml-28 hidden md:block">
           <ul className="flex justify-between gap-4 text-base text-muted-foreground">
             {homeConfig.map((item, index) => (
               <Link href={item.href} key={index} className="transition hover:text-foreground">
@@ -18,7 +18,7 @@ export default function Navbar() {
               </Link>
             ))}
           </ul>
-        </div>
+        </div> */}
         <div className="flex w-full items-center justify-between space-x-4 md:block md:w-auto">
           <Button variant="outline" asChild>
             <Link href="#panduan">Panduan</Link>
