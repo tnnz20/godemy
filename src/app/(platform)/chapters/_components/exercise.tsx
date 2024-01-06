@@ -25,9 +25,9 @@ export function Exercise(props: Readonly<CardExerciseProps>) {
         <div className="flex items-center justify-center rounded-full bg-[#0072F5] p-2">
           <Icons.HelpCircle className="h-10 w-10 stroke-background stroke-[1.5]" />
         </div>
-        <p className="text-lg">Waktunya untuk kuis.</p>
+        <p className="text-lg">Waktunya untuk latihan soal!</p>
         <p className="text-pretty text-center text-sm text-slate-500">
-          Uji Pengetahuan anda dan lihat apa saja ilmu yang telah kamu pelajari
+          Uji Pengetahuan anda dan lihat apa saja ilmu yang telah anda pelajari.
         </p>
       </div>
       <CardExercise
@@ -87,7 +87,7 @@ function CardExercise(props: Readonly<CardExerciseProps>) {
   )
 }
 
-function ExerciseOption(props: { answers: string[] }) {
+function ExerciseOption(props: Readonly<{ answers: string[] }>) {
   const [isClicked, setIsClicked] = React.useState<number | null>(null)
   const [setAnswer] = useExerciseStore(useShallow((state) => [state.setAnswer]))
 
@@ -172,7 +172,7 @@ function ExerciseResult(props: Readonly<{ answers: string[]; hint: string; expla
             <p className="text-sm font-semibold text-wrongBadgeResultText">Salah</p>
           </div>
           <p className="mx-auto w-full max-w-[380px] items-center justify-center text-center text-sm text-muted-foreground">
-            {props.hint}
+            petunjuk: {props.hint}
           </p>
         </CardContent>
       )}
