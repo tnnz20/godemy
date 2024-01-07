@@ -39,7 +39,11 @@ export default async function ChapterPage(prop: Readonly<PageProps>) {
   return (
     <main className="container my-12 max-w-5xl  lg:my-8 lg:py-5">
       <div className="mx-auto w-full min-w-0 space-y-3">
-        <h1 className="my-5 inline-block font-heading text-4xl lg:text-5xl">{chapter.title}</h1>
+        {chapter.title != "Kuis" ? (
+          <h1 className="my-5 inline-block font-heading text-4xl lg:text-5xl">{chapter.title}</h1>
+        ) : (
+          <div className="my-5"></div>
+        )}
         <article className="h-full">
           <Mdx code={chapter.body.code} />
         </article>
