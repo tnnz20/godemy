@@ -1,5 +1,6 @@
 import { ChaptersConfig } from "@/types"
 
+//TODO: update threshold
 export const chaptersConfig: ChaptersConfig = {
   sideNav: [
     {
@@ -7,23 +8,27 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          href: "/chapters/your-first-program/pendahuluan",
+          href: "/chapters/1/pendahuluan",
         },
         {
           title: "Sejarah Golang",
-          href: "/chapters/your-first-program/sejarah-golang",
+          href: "/chapters/1/sejarah-golang",
         },
         {
           title: "Kelebihan Golang",
-          href: "/chapters/your-first-program/kelebihan-golang",
+          href: "/chapters/1/kelebihan-golang",
         },
         {
           title: "Program Pertama",
-          href: "/chapters/your-first-program/program-pertama",
+          href: "/chapters/1/program-pertama",
         },
         {
           title: "Komentar",
-          href: "/chapters/your-first-program/komentar",
+          href: "/chapters/1/komentar",
+        },
+        {
+          title: "Kuis",
+          href: "/chapters/1/kuis",
         },
       ],
     },
@@ -32,19 +37,19 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          href: "/chapters/variable-data-types-operators/pendahuluan",
+          href: "/chapters/2/pendahuluan",
         },
         {
           title: "Variabel",
-          href: "/chapters/variable-data-types-operators/variable",
+          href: "/chapters/2/variable",
         },
         {
           title: "Data Types",
-          href: "/chapters/variable-data-types-operators/data-types",
+          href: "/chapters/2/data-types",
         },
         {
           title: "Operators",
-          href: "/chapters/variable-data-types-operators/operators",
+          href: "/chapters/2/operators",
         },
       ],
     },
@@ -53,23 +58,23 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          href: "/chapters/control-flow/pendahuluan",
+          href: "/chapters/3/pendahuluan",
         },
         {
           title: "Control Flow",
-          href: "/chapters/control-flow/control-flow",
+          href: "/chapters/3/control-flow",
         },
         {
           title: "Percabangan If - Else",
-          href: "/chapters/control-flow/percabangan-if-else",
+          href: "/chapters/3/percabangan-if-else",
         },
         {
           title: "Switch Case",
-          href: "/chapters/control-flow/switch-case",
+          href: "/chapters/3/switch-case",
         },
         {
           title: "Nested Control Flow",
-          href: "/chapters/control-flow/nested-control-flow",
+          href: "/chapters/3/nested-control-flow",
         },
       ],
     },
@@ -78,27 +83,27 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          href: "/chapters/looping/pendahuluan",
+          href: "/chapters/4/pendahuluan",
         },
         {
           title: "Looping",
-          href: "/chapters/looping/looping",
+          href: "/chapters/4/looping",
         },
         {
           title: "Standard For",
-          href: "/chapters/looping/standard-for",
+          href: "/chapters/4/standard-for",
         },
         {
           title: "For With Condition Only",
-          href: "/chapters/looping/for-with-condition-only",
+          href: "/chapters/4/for-with-condition-only",
         },
         {
           title: "For Without Arguments",
-          href: "/chapters/looping/for-without-arguments",
+          href: "/chapters/4/for-without-arguments",
         },
         {
           title: "For Range",
-          href: "/chapters/looping/for-range",
+          href: "/chapters/4/for-range",
         },
       ],
     },
@@ -107,27 +112,27 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          href: "/chapters/composite-types/pendahuluan",
+          href: "/chapters/5/pendahuluan",
         },
         {
           title: "Tipe Komposit",
-          href: "/chapters/composite-types/tipe-komposit",
+          href: "/chapters/5/tipe-komposit",
         },
         {
           title: "Array",
-          href: "/chapters/composite-types/array",
+          href: "/chapters/5/array",
         },
         {
           title: "Slice",
-          href: "/chapters/composite-types/slice",
+          href: "/chapters/5/slice",
         },
         {
           title: "Map",
-          href: "/chapters/composite-types/map",
+          href: "/chapters/5/map",
         },
         {
           title: "Struct",
-          href: "/chapters/composite-types/struct",
+          href: "/chapters/5/struct",
         },
       ],
     },
@@ -136,31 +141,31 @@ export const chaptersConfig: ChaptersConfig = {
       items: [
         {
           title: "Pendahuluan",
-          href: "/chapters/function/pendahuluan",
+          href: "/chapters/6/pendahuluan",
         },
         {
           title: "Function",
-          href: "/chapters/function/function",
+          href: "/chapters/6/function",
         },
         {
           title: "Parameters",
-          href: "/chapters/function/parameters",
+          href: "/chapters/6/parameters",
         },
         {
           title: "Return Value",
-          href: "/chapters/function/return-value",
+          href: "/chapters/6/return-value",
         },
         {
           title: "Scope",
-          href: "/chapters/function/scope",
+          href: "/chapters/6/scope",
         },
         {
           title: "Function Variadic",
-          href: "/chapters/function/function-variadic",
+          href: "/chapters/6/function-variadic",
         },
         {
           title: "Function Closure",
-          href: "/chapters/function/function-closure",
+          href: "/chapters/6/function-closure",
         },
       ],
     },
