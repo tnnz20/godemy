@@ -5,14 +5,22 @@ interface State {
   answer: string
 }
 
+const initialState: State = {
+  answer: "",
+  status: "idle",
+}
+
 interface Action {
   setStatus: (status: State["status"]) => void
   setAnswer: (answer: State["answer"]) => void
+  resetState: () => void
 }
 
 export const useExerciseStore = create<State & Action>((set) => ({
-  answer: "",
-  status: "idle",
+  ...initialState,
   setAnswer: (answer) => set(() => ({ answer: answer })),
   setStatus: (status) => set(() => ({ status: status })),
+  resetState: () => {
+    set(initialState)
+  },
 }))
