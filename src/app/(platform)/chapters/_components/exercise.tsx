@@ -4,7 +4,7 @@ import React from "react"
 import { useExerciseStore } from "@/store/useExerciseStore"
 import { useShallow } from "zustand/react/shallow"
 
-import { cn } from "@/lib/utils"
+import { cn, indexToAlphabet } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Icons } from "@/components/icons"
@@ -15,10 +15,12 @@ interface CardExerciseProps {
   explanation: string
   hint: string
   question: string
+  subQuestion: string
+  isCode: boolean
 }
 
 export function Exercise(props: Readonly<CardExerciseProps>) {
-  const { answers, correctAnswer, explanation, hint, question } = props
+  const { answers, correctAnswer, explanation, hint, question, isCode, subQuestion } = props
   return (
     <div className="mt-4 flex max-w-5xl flex-col items-center justify-center md:mx-28">
       <div className="my-4 flex flex-col items-center gap-2">
@@ -36,6 +38,8 @@ export function Exercise(props: Readonly<CardExerciseProps>) {
         explanation={explanation}
         hint={hint}
         question={question}
+        isCode={isCode}
+        subQuestion={subQuestion}
       />
     </div>
   )
@@ -55,11 +59,19 @@ function CardExercise(props: Readonly<CardExerciseProps>) {
   }
 
   return (
-    <Card className="mx-10 my-4 rounded-lg">
-      <CardHeader>
-        <CardTitle className="text-pretty text-md text-center font-normal">{props.question}</CardTitle>
+    <Card className="mx-10 my-4 w-3/4 rounded-lg">
+      <CardHeader className="">
+        {props.isCode ? (
+          <CardTitle className="text-md flex flex-col font-normal">
+            <pre className="mb-4 mt-6 overflow-x-auto rounded-lg border px-2 py-4">{props.question}</pre>
+            <p>{props.subQuestion}</p>
+          </CardTitle>
+        ) : (
+          <CardTitle className="text-md text-center font-normal">{props.question}</CardTitle>
+        )}
         <CardDescription className="text-center text-sm">Pilih salah satu jawaban di bawah!</CardDescription>
       </CardHeader>
+
       <Card className="mx-4 rounded-lg">
         {status == "idle" ? (
           <ExerciseOption answers={props.answers} />
@@ -178,9 +190,4 @@ function ExerciseResult(props: Readonly<{ answers: string[]; hint: string; expla
       )}
     </>
   )
-}
-
-function indexToAlphabet(index: number) {
-  const charCodeA = "A".charCodeAt(0)
-  return String.fromCharCode(charCodeA + index)
 }
