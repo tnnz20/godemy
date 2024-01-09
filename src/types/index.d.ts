@@ -13,9 +13,11 @@ export type HomeConfig = {
   href: string
 }[]
 
+// TODO: active treshold and delete disabled
 export type SidebarNavItem = {
   title: string
   disabled?: boolean
+  // threshold:number
 } & (
   | {
       href: string
@@ -29,4 +31,17 @@ export type SidebarNavItem = {
 
 export type ChaptersConfig = {
   sideNav: SidebarNavItem[]
+}
+
+export type QuizItem = {
+  id: number
+  question: string
+  isCode: boolean
+  answers: string[]
+  correctAnswer: string
+}
+
+export type QuizConfig = {
+  category: string
+  quizItem: QuizItem[]
 }
