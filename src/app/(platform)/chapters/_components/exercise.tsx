@@ -22,7 +22,7 @@ interface CardExerciseProps {
 export function Exercise(props: Readonly<CardExerciseProps>) {
   const { answers, correctAnswer, explanation, hint, question, isCode, subQuestion } = props
   return (
-    <div className="mt-4 flex max-w-5xl flex-col items-center justify-center md:mx-28">
+    <div className="mt-4 flex h-auto max-w-5xl flex-col items-center justify-center md:mx-28">
       <div className="my-4 flex flex-col items-center gap-2">
         <div className="flex items-center justify-center rounded-full bg-[#0072F5] p-2">
           <Icons.HelpCircle className="h-10 w-10 stroke-background stroke-[1.5]" />
@@ -117,9 +117,9 @@ function ExerciseOption(props: Readonly<{ answers: string[] }>) {
           className={cn("flex justify-start p-6 pl-4 transition", { "bg-muted": isClicked == index })}
           key={index}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex w-auto items-center gap-2">
             <div
-              className={cn("flex  h-8 w-8 items-center justify-center rounded-full bg-optionCircle transition", {
+              className={cn("mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-optionCircle transition", {
                 "bg-activeOptionCircle": isClicked == index,
               })}
             >
@@ -132,7 +132,7 @@ function ExerciseOption(props: Readonly<{ answers: string[] }>) {
               </p>
             </div>
             <p
-              className={cn("text-muted-foreground transition", {
+              className={cn("ml-2 whitespace-normal text-muted-foreground transition", {
                 "text-foreground": isClicked == index,
               })}
             >
