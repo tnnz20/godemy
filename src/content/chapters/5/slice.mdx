@@ -1,10 +1,10 @@
 ---
 title: Slice
 chapter: 5
-description: Materi tentang Slice pada Golang
+description: Materi tentang Slice pada Go
 ---
 
-Di dalam bahasa pemrograman Go (Golang), **slice** adalah struktur data
+Di dalam bahasa pemrograman Go, **slice** adalah struktur data
 dinamis dan fleksibel yang merepresentasikan sebagian dari array yang ada
 di bawahnya. Berbeda dengan array, slice tidak dibatasi oleh ukuran tetap
 dan dapat tumbuh atau menyusut sesuai kebutuhan. Slice banyak
@@ -24,9 +24,11 @@ adalah slice.
 Anda pasti akan bertanya kalau perbedannya hanya di penentuan alokasi
 pada saat inisialisasi, kenapa tidak menggunakan satu istilah saja? atau
 adakah perbedaan lainnya?
+
 Sebenarnya slice dan array tidak bisa dibedakan karena merupakan sebuah
 kesatuan. Array adalah kumpulan nilai atau elemen, sedang slice adalah
 referensi tiap elemen tersebut.
+
 Slice bisa dibentuk dari array yang sudah didefinisikan, caranya dengan
 memanfaatkan teknik 2 index untuk mengambil elemen-nya. Contoh bisa
 dilihat pada gambar berikut.
@@ -81,3 +83,12 @@ Adapun beberapa operasi yang bisa dilakukan pada slice sebagai berikut:
   Jumlah element yang di-copy dari basket2 adalah sejumlah lebar slice 
   basket1. Jika jumlah slice pada basket2 lebih kecil dari basket1, maka 
   akan ter-copy semua.
+
+<Exercise 
+  answers={["Array memiliki panjang tetap, sedangkan slice memiliki panjang dinamis", "Array dan slice memiliki panjang tetap", "Array dapat menambah atau mengurangi elemen, sedangkan slice tidak bisa", "Array dapat digunakan untuk tipe data numerik saja, sedangkan slice dapat digunakan untuk tipe data apapun"]}
+  correctAnswer={"Array memiliki panjang tetap, sedangkan slice memiliki panjang dinamis"}
+  explanation={"Kita bisa membedakan array dan slice berdasarkan cara pengalokasian memorynya"}
+  hint={"Mohon baca lagi materi tentang slice"}
+  question={"Apa perbedaan utama antara array dan slice dalam Golang?"}
+  isCode={false}
+/>

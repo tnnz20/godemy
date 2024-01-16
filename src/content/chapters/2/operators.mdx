@@ -1,7 +1,7 @@
 ---
 title: Operators
 chapter: 2
-description: Materi tentang Operators Pada Golang
+description: Materi tentang Operators Pada Go
 ---
 
 Operator merupakan simbol atau keyword yang digunakan untuk
@@ -29,13 +29,9 @@ aritmatika standar, list-nya bisa dilihat di tabel berikut.
 |    /     | Pembagian                      |
 |    %     | Modulus / sisa hasil pembagian |
 
-Contoh Penrapanya sebagai berikut:
+Contoh Penerapanya sebagai berikut:
 
-```go
-var number int = 12
-
-fmt.Println(number / 4) // 3
-```
+<Compiler src="https://goplay.tools/snippet/dYZfUl72AVb" />
 
 ## Operator Perbandingan
 
@@ -54,13 +50,18 @@ digunakan di Go
 |    \>    | Apakah nilai kiri lebih besar dari nilai kanan             |
 |   \>\=   | Apakah nilai kiri lebih besar atau sama dengan nilai kanan |
 
-Contoh Penrapanya sebagai berikut:
+Contoh Penerapanya sebagai berikut:
 
-```go
-var number int = 12 / 4
+<Compiler src="https://goplay.tools/snippet/lCmFAHnI0o7"/>
 
-fmt.Println(number != 5) // true
-```
+<Exercise 
+  answers={["!=", "==", ">", "<="]}
+  correctAnswer={">"}
+  explanation={"Benar operator > digunakan untuk membandingkan nilai a lebih besar daripada nilai b."}
+  hint={"Mohon baca kembali materi yang berhubungan dengan operators."}
+  question={"Operator yang digunakan untuk membandingkan nilai a lebih besar daripada nilai b adalah?"}
+  isCode={false}
+/>
 
 ## Operator Logika
 
@@ -80,8 +81,13 @@ Beberapa operator logika standar yang bisa digunakan:
 
 Contoh Penrapanya sebagai berikut:
 
-```go
-fmt.Println(true || false) // true
-```
+<Compiler src="https://goplay.tools/snippet/AG3DWRC4UEz" />
 
-latihan
+<Exercise 
+  answers={["Memberikan nilai “false” ketika variabel bernilai “true”", "Membandingkan dua buah variabel", "Memberitahu sebuah program untuk berhati hati", "Stop program secara paksa"]}
+  correctAnswer={"Memberikan nilai “false” ketika variabel bernilai “true”"}
+  explanation={"Pada konteks perbandingan tanda ! digunakan untuk reverse nilai boolean."}
+  hint={"Operator tersebut merupakan salah satu operator logika yang membandingkan nilai boolean."}
+  question={"Operator “!” digunakan untuk?"}
+  isCode={false}
+/>

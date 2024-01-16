@@ -1,7 +1,7 @@
 ---
 title : Scope
 chapter : 6
-description : Materi tentang Scope pada Golang
+description : Materi tentang Scope pada Go
 ---
 
 Scope (lingkup) dalam pemrograman mengacu pada wilayah di dalam kode 
@@ -11,7 +11,7 @@ untuk memisahkan variabel dengan nama yang sama yang mungkin
 
 digunakan dalam bagian lain dari kode Anda. Scope membantu mengatur 
 dan melindungi variabel dari tabrakan dan membuat kode lebih terstruktur.
-Dalam bahasa pemrograman Golang, ada beberapa tingkat scope yang 
+Dalam bahasa pemrograman Go, ada beberapa tingkat scope yang 
 umumnya digunakan:
 
 ## Block Scope
@@ -22,7 +22,7 @@ perulangan, atau kondisional.
 
 Sebagai contoh:
 
-    <Image src="/content/bab-6/bab-6-7.png" width="815" height="400" alt="Block Scope" />
+<Image src="/content/bab-6/bab-6-7.png" width="618" height="304" alt="Block Scope" />
 
 Pada contoh di atas kita mendeklarasikan sebuah variabel dengan nama 
 “hasil” yang berada pada fungsi “sum”. Ketika kita mencoba mengakses 
@@ -36,7 +36,7 @@ seluruh package tempat mereka dideklarasikan.
 
 Sebagai contoh:
 
-    <Image src="/content/bab-6/bab-6-8.png" width="815" height="400" alt="Package Scope" />
+<Image src="/content/bab-6/bab-6-8.png" width="618" height="304" alt="Package Scope" />
 
 Pada contoh di atas kita mendeklarasikan variabel `five` pada Package 
 Scope ketika kita mencoba mengakses variabel tersebut tidak terdapat 
@@ -49,6 +49,7 @@ Beberapa bahasa pemrograman juga mendukung
 universal scope, yang berarti variabel tersebut dapat diakses di seluruh 
 program. Untuk mengakses universal scope diperlukan import terlebih 
 dahulu.
+
 Scope adalah konsep yang penting dalam pemrograman karena membantu 
 mencegah konflik penamaan dan mengatur bagaimana variabel dapat 
 digunakan di seluruh program Anda. Dengan memahami scope, Anda 

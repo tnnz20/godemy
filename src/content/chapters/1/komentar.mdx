@@ -1,25 +1,25 @@
 ---
-title : Komentar
-chapter : 1
-description : Materi tentang Komentar pada Golang
+title: Komentar
+chapter: 1
+description: Materi tentang Komentar pada Go
 ---
 
-Komentar salah satu hal yang umum ada pada setiap bahasa 
-pemrograman, komentar biasa dimanfaatkan untuk menyisipkan catatan 
-pada kode program, menulis penjelasan atau deskripsi mengenai suatu blok 
+Komentar salah satu hal yang umum ada pada setiap bahasa
+pemrograman, komentar biasa dimanfaatkan untuk menyisipkan catatan
+pada kode program, menulis penjelasan atau deskripsi mengenai suatu blok
 kode, atau bisa juga digunakan untuk me-remark kode (men-non-aktif kan
-kode yang tidak digunakan). Komentar akan diabaikan ketika kompilasi 
+kode yang tidak digunakan). Komentar akan diabaikan ketika kompilasi
 maupun eksekusi program.
 
-Ada 2 jenis komentar di Go, **inline** & **multiline**. Pada pembahasan ini akan 
-dijelaskan tentang penerapan dan perbedaan kedua jenis komentar 
+Ada 2 jenis komentar di Go, **inline** & **multiline**. Pada pembahasan ini akan
+dijelaskan tentang penerapan dan perbedaan kedua jenis komentar
 tersebut.
 
 ## Komentar Inline
 
 Penulisan komentar jenis ini di awali dengan tanda double slash `//`
-lalu diikuti pesan komentarnya. Komentar inline hanya berlaku 
-untuk satu baris pesan saja. Jika pesan komentar lebih dari satu 
+lalu diikuti pesan komentarnya. Komentar inline hanya berlaku
+untuk satu baris pesan saja. Jika pesan komentar lebih dari satu
 baris, maka tanda `//` harus ditulis lagi di baris selanjutnya.
 
 Berikut contoh sintaks penerapan komentar inline pada Go
@@ -35,17 +35,18 @@ fmt.Println("Hello World")
 ```
 
 ## Komentar Multiline
-Jika kita ingin membuat sebuah komentar lebih dari satu baris atau 
-memiliki sebuah komentar yang cukup panjang kita bisa 
-menggunakan komentar multiline untuk membuat sebuah 
-komentar lebih rapi dan mudah dilihat. Berbeda dengan Inline, 
-Multiline ditulis menggunakan slash dan asterisk ` /* ` dan di akhiri 
+
+Jika kita ingin membuat sebuah komentar lebih dari satu baris atau
+memiliki sebuah komentar yang cukup panjang kita bisa
+menggunakan komentar multiline untuk membuat sebuah
+komentar lebih rapi dan mudah dilihat. Berbeda dengan Inline,
+Multiline ditulis menggunakan slash dan asterisk `/*` dan di akhiri
 dengan asterisk dan slash `*/`
 
 Berikut contoh sintaks penerapan komentar multiline pada Go
 
 ```go
-/* 
+/*
 Baris dibawah ini akan menampilkan-
 pesan Hello World
 */
@@ -53,13 +54,15 @@ pesan Hello World
 fmt.Println("Hello World")
 ```
 
-
-<Exercise 
-  answers={["//", "^^", "**", "/*"]}
-  correctAnswer={"//"}
-  explanation={"Tanda double-slash atau // digunakan untuk memberikan komentar pada Go."}
+<Exercise
+  answers={["Benar", "Salah"]}
+  correctAnswer={"Benar"}
+  explanation={"Benar sekali dengan mengunakan komentar multiline anda dapat membuat sebuah kode yang mudah di baca."}
   hint={"Mohon lebih teliti lagi."}
-  question={"Tanda apa yang digunakan untuk membuat sebuah komentar pada pemrograman Go?"}
+  question={
+    "Jika Anda memiliki sebuah komentar yang cukup panjang sebaiknya menerapkan “Komentar Multiline”. Pernyataan berikut benar atau salah?"
+  }
+  isCode={false}
 />
 
-<Compiler src="https://goplay.tools/snippet/xqcgSLnEjjy"/>
+<Compiler src="https://goplay.tools/snippet/YRvbskFuexz" />

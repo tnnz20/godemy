@@ -1,10 +1,10 @@
 ---
 title : Standard For
 chapter : 4
-description : Materi tentang Standard For pada Golang
+description : Materi tentang Standard For pada Go
 ---
 
-Looping pertama yang bisa digunakan pada Golang merupakan looping 
+Looping pertama yang bisa digunakan pada Go merupakan looping 
 yang biasa kita temukan pada pemrograman lain khususnya C, looping ini 
 memiliki tiga komponen yaitu:
 
@@ -22,7 +22,7 @@ sintak penulisannya
   alt="Sintaks Penulisan Standard Looping"
 />
 
-Penjelasan:
+## Penjelasan:
 - Keyword for digunakan untuk menandakan kepada compiler bahwa ini 
 ditujukan untuk looping. Ingat semua control flow selalu di memiliki 
 kurung kurawal.
@@ -30,7 +30,7 @@ kurung kurawal.
 - Inisialisasi digunakan untuk penanda yang akan digunakan pada 
 looping yang Anda buat pada standard looping kita wajib melakukan 
 Inisialisasi sebuah variable terlebih dahulu, uniknya pada 
-pemrograman golang kita dapat membuat variabel sementara 
+pemrograman Go kita dapat membuat variabel sementara 
 (_temporary variable_) yang hanya akan berkerja pada scope control flow 
 itu sendiri (materi scope akan dipelajari pada chapter function) intinya 
 adalah variabel ini hanya akan berguna pada looping yang anda buat, 
@@ -50,21 +50,28 @@ berjalan terus menerus karena itu kita wajib membuat sebuah kondisi
 pada looping
 
 - Post-Statement ini yang akan merubah nilai yang sudah kita 
-Inisialisasi di awal tadi. pada gambar “i++” memiliki arti “i+1” ini 
+Inisialisasi di awal tadi. pada gambar `i++` memiliki arti `i+1` ini 
 merupakan singkatan umum yang di gunakan pada pemrograman. 
-Kita bisa menggunakan “i--” untuk “i-1”. Dengan adanya post -
-statement nilai pada inisialisasi di awal akan terus berubah 
+Kita bisa menggunakan `i--` untuk `i-1`. Dengan adanya post - statement nilai pada inisialisasi di awal akan terus berubah 
 berdasarkan statement yang dibuat.
 
 Berikut penerapan kode untuk menampilkan angka 1 - 100 pada pemgrograman Go
 
-```go
-package main
+<Compiler src="https://goplay.tools/snippet/xXet6FT10G1"/>
+
+<Exercise 
+  answers={["0", "10", "1", "Tidak terbatas"]}
+  correctAnswer={"10"}
+  explanation={"Kode program tersebut menggunakan looping for dengan kondisi i < 10. Oleh karena itu, kode program tersebut akan dieksekusi sebanyak 10 kali, yaitu dari i = 0 hingga i = 9."}
+  hint={"Mohon lebih teliti lagi."}
+  isCode={true}
+  question={`package main
 import "fmt"
 
 func main() {
-    for i := 1; i <= 100; i++ {
-        fmt.Println(i)
-    }
-}
-```
+  for i := 0; i < 10; i++ {
+    fmt.Println(i)
+  }
+}`}
+subQuestion={"Berapa kali kode program tersebut akan dieksekusi?"}
+/>

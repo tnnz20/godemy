@@ -1,7 +1,7 @@
 ---
 title : Switch Case
 chapter : 3
-description : Materi tentang Switch Case pada Golang
+description : Materi tentang Switch Case pada Go
 ---
 
 Switch dan case adalah struktur kontrol yang digunakan dalam 
@@ -34,8 +34,7 @@ penggunaannya adalah untuk mengelola logika yang berbeda berdasarkan
 hari dalam seminggu, nilai sensor, tindakan pengguna, atau pilihan 
 pengguna dalam aplikasi.
 
-
-Berikut sintak penulisan Switch case pada golang:
+Berikut sintak penulisan Switch case pada Go:
 
 ```go
 switch ekspresi{
@@ -50,7 +49,7 @@ switch ekspresi{
 
 Berbeda dengan “if-else” penulisan switch case yang dimana kita harus 
 menambahkan kurung kurawal di setiap kondisi nya, pada switch case 
-menggunakan tanda titik dua “:”. Selain itu pada switch case juga kita bisa 
+menggunakan tanda titik dua `:`. Selain itu pada switch case juga kita bisa 
 menetapkan sebuah nilai default ketika semua kondisi yang dibuat tidak 
 terpenuhi.
 
@@ -60,18 +59,18 @@ dilanjutkan ke pengecekan case selanjutnya, meskipun tidak ada keyword
 break di situ. Konsep ini berkebalikan dengan switch pada umumnya, yang 
 ketika sebuah case terpenuhi, maka akan tetap dilanjut mengecek case 
 selanjutnya kecuali ada keyword break untuk mengakhiri kondisi.
+
 Switch case pada Go juga dapat menampang case yang memiliki kondisi 
 lebih dari satu. Cara penerapannya pun cukup mudah Anda hanya perlu 
 memisahkan setiap kondisi dengan tanda koma `,`. Seperti contoh berikut
 
-```go
-var point int = 6
-switch point{
-  case 8, 9, 10:
-    fmt.Println("Nilai Tinggi")
-  case 7, 6, 5:
-    fmt.Println("Nilai Cukup")
-  default:
-    fmt.Println("Nilai Kurang")
-}
-```
+<Compiler src="https://goplay.tools/snippet/tkO2UCR-3hY"/>
+
+<Exercise 
+  answers={["Program akan menghasilkan kesalahan (error)", "Eksekusi akan melanjutkan ke case default, jika ada", " Switch statement tidak akan berfungsi", "Program akan berhenti"]}
+  correctAnswer={"Eksekusi akan melanjutkan ke case default, jika ada"}
+  explanation={"Berbeda dengan if-else, switch case akan melanjutkan ke default walaupun tidak ada nilai yang terpenuhi."}
+  hint={"Switch case memiliki kondisi tersendiri jika tidak ada nilai yang cocok pada case apapun."}
+  question={"Apa yang terjadi jika ekspresi pada switch tidak cocok dengan nilai case manapun?"}
+  isCode={false}
+/>

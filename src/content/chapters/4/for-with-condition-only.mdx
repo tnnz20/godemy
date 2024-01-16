@@ -1,13 +1,14 @@
 ---
 title : For With Condition Only
 chapter : 4
-description : Materi tentang For With Condition Only pada Golang
+description : Materi tentang For With Condition Only pada Go
 ---
 
 Looping jenis kedua sedikit berbeda dengan looping jenis pertama. Looping 
 ini deklarasi dan perubahan variabel counter tidak dituliskan setelah 
 keyword, hanya kondisi perulangan saja. Konsepnya mirip seperti while 
 milik bahasa pemrograman lain.
+
 Berikut sintak penulisan looping hanya dengan kondisi saja
 
 ```go
@@ -34,12 +35,13 @@ Inisialisasi.
 Berikut penerapan kode untuk menampilkan angka 1 - 100 dengan looping 
 condition only.
 
-```go
-i := 1
+<Compiler src="https://goplay.tools/snippet/fPGDCIZTdOH" />
 
-for i <= 100 {
-    fmt.Println(i)
-    i++
-}
-```
-
+<Exercise 
+  answers={["error", "program berjalan dengan lancar", " program berhenti", "proses looping akan dilakukan secara terus menerus"]}
+  correctAnswer={"proses looping akan dilakukan secara terus menerus"}
+  explanation={"Benar sekali ketika sebuah looping tidak memiliki post-statement, looping akan terus berlanjut karena kondisinya tidak terpenuhi."}
+  hint={"Ingat kembali dengan proses sebuah looping terjadi."}
+  question={"Apa yang terjadi ketika kita membuat looping dengan kondisi saja tapi tidak memasukan post-statement Nya?"}
+  isCode={false}
+/>

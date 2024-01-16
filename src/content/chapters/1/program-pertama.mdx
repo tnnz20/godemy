@@ -1,14 +1,14 @@
 ---
 title : Program Pertama
 chapter : 1
-description : Materi tentang Program Pertama pada Golang
+description : Materi tentang Program Pertama pada Go
 ---
 
 Setelah mengetahui sejarah serta keunggulan yang dimiliki oleh bahasa
-pemrograman Golang selanjutnya kita akan membuat program pertama
-dari Bahasa Golang.
+pemrograman Go selanjutnya kita akan membuat program pertama
+dari Bahasa Go.
 
-### Langkah 1: Menuliskan sintak
+### Langkah 1: Menuliskan sintak Go
 
 Ketik lah code di bawah ini ke dalam code compiler yang disediakan
 
@@ -18,7 +18,7 @@ package main
 import "fmt"
 
 func main() {
-    fmt.Println("Hello World")
+   fmt.Println("Hello World")
 }
 ```
 
@@ -28,64 +28,107 @@ Langkah selanjutnya jalankan program dengan men klik tombol play yang
 tersedia pada compiler yang ada. Dan lihat output yang diberikan pada
 compiler
 
-compiler
+<Compiler src="https://goplay.tools/snippet/ajjScwhi6eL"/>
 
-Penjelasan Kode Program
+## Penjelasan Kode Program
+<br/>
 
-1. Penggunaan Package
-   Setiap program Go harus memiliki `package`. Setiap project harus ada
-   minimal satu file dengan nama package **main**. File yang ber-package
-   main, akan di eksekusi pertama kali ketika program di jalankan.
+### 1. Penggunaan Package
 
-   Berikut adalah sintak penulisan `package`.
+Dalam bahasa pemrograman Go, `package` adalah kumpulan kode yang di 
+kelompokkan berdasarkan fungsi nya. Package dapat digunakan 
+untuk membagi kode menjadi bagian-bagian yang lebih kecil dan lebih 
+mudah dikelola. `Package` juga dapat digunakan untuk berbagi kode 
+dengan program lain.
 
-   ```go
-   package <nama-package>
-   package main
-   ```
+Package dapat dibagi menjadi dua jenis, yaitu:
+- Package bawaan
+- Package pihak ketiga
 
-2. Penggunaan Import
-   Keyword `import` digunakan untuk meng-import atau memasukan
-   library lain ke dalam file program yang kita buat, dengan menggunakan keyword
-   `import` ini kita bisa memanggil sebuah function yang dibuat di file lain
-   maupun function yang dibuat oleh orang lain.
-   library `fmt` merupakan salah satu library bawaan yang disediakan oleh
-   Go, isinya banyak fungsi untuk keperluan _I/O_ yang berhubungan
-   dengan text.
+**Package bawaan** adalah package yang sudah disediakan oleh bahasa 
+pemrograman Go. Package bawaan biasanya berisi fungsi dan variabel 
+yang umum digunakan, seperti fungsi `fmt.Println()`.
 
-   Berikut adalah sintak penulisan keyword import:
+**Package pihak ketiga** adalah package yang dibuat oleh pihak lain. 
+Package pihak ketiga biasanya berisi fungsi dan variabel yang lebih 
+spesifik, seperti fungsi untuk mengakses database atau fungsi untuk 
+melakukan analisis data.
 
-   ```go
-   import <”nama-package”>
-   import "fmt"
-   ```
+Setiap program Go harus memiliki `package`. Setiap project harus ada
+minimal satu file dengan nama package **main**. File yang ber-package
+main, akan di eksekusi pertama kali ketika program di jalankan.
 
-3. Penggunaan fungsi main
-   Dalam sebuah proyek Golang harus ada 1 file program yang di
-   dalamnya berisi sebuah fungsi bernama main. Fungsi main akan
-   dipanggil pertama kali pada saat eksekusi program.
-   Berikut sintak penulisan fungsi main:
+Berikut adalah sintak penulisan `package`.
 
-   ```go
-   func main( ){
-      <isi-fungsi>
-   }
-   ```
+```go
+package <nama-package>
+package main
+```
 
-   <Callout type='warning'>
-   Di bab selanjutnya kita akan mempelajari lebih lanjut tentang fungsi pada pemrograman Golang.
-   </Callout>
+### 2. Penggunaan Import
 
-4. Penggunaan fmt
-   Fungsi `fmt.Println()` digunakan untuk menampilkan text ke layar (pada
-   konteks ini, terminal atau console). Di program pertama yang telah buat, fungsi ini menampilkan tulisan
-   **Hello world**.
-   Sintak penulisan keyword `fmt.Println()` bisa dilihat pada contoh berikut:
+Keyword `import` digunakan untuk meng-import atau memasukan
+library lain ke dalam file program yang kita buat, dengan menggunakan keyword
+`import` ini kita bisa memanggil sebuah function yang dibuat di file lain
+maupun function yang dibuat oleh orang lain.
+library `fmt` merupakan salah satu library bawaan yang disediakan oleh
+Go, isinya banyak fungsi untuk keperluan _I/O_ yang berhubungan
+dengan text.
 
-   ```go
-   fmt.Println(<isi-parameter>)
-   fmt.Println("Hello World")
-   ```
+Berikut adalah sintak penulisan keyword import:
+
+```go
+import <”nama-package”>
+import "fmt"
+```
+
+### 3. Penggunaan fungsi main
+
+Dalam bahasa pemrograman Go, fungsi `main()` memiliki peran yang 
+sangat khusus dan *esensial*. Ia merupakan titik awal eksekusi program 
+Go. Berikut adalah penjelasan tentang fungsi `main()`:
+
+-  Ketika sebuah program Go dijalankan, compiler Go akan 
+   mencari fungsi `main()`.
+-  Jika fungsi `main()` tidak ditemukan, compiler akan menampilkan 
+   pesan kesalahan.
+-  Jika fungsi `main()` ditemukan, compiler akan memulai eksekusi 
+   program dari fungsi tersebut.
+
+Dalam sebuah proyek Go harus ada 1 file program yang di dalamnya 
+berisi sebuah fungsi bernama main. Fungsi main akan dipanggil 
+pertama kali pada saat eksekusi program
+   
+```go
+func main( ){
+   <isi-fungsi>
+}
+```
+
+<Callout type='warning'>
+Di bab selanjutnya kita akan mempelajari lebih lanjut tentang fungsi pada pemrograman Go.
+</Callout>
+
+<Exercise 
+  answers={["main", "init", "first", "render"]}
+  correctAnswer={"main"}
+  explanation={"Fungsi main merupakan fungsi yang akan di pangil setiap kali program di eksekusi."}
+  hint={"Jika fungsi tersebut tidak ada maka akan terjadi kesalahan pada program Go."}
+  question={"Nama fungsi yang digunakan compiler Go untuk menentukan titik awal eksekusi sebuah program adalah?"}
+  isCode={false}
+/>
+
+### 4. Penggunaan fmt
+
+Fungsi `fmt.Println()` digunakan untuk menampilkan text ke layar (pada
+konteks ini, terminal atau console). Di program pertama yang telah buat, 
+fungsi ini menampilkan tulisan **Hello world**.
+Sintak penulisan keyword `fmt.Println()` bisa dilihat pada contoh berikut:
+
+```go
+fmt.Println(<isi-parameter>)
+fmt.Println("Hello World")
+```
 
 Fungsi `fmt.Println()` berada dalam library `fmt`, jadi untuk
 menggunakannya diperlukan library tersebut untuk di-import terlebih

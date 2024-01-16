@@ -1,13 +1,13 @@
 ---
 title : Parameters
 chapter : 6
-description : Materi tentang Parameters pada Golang
+description : Materi tentang Parameters pada Go
 ---
 
 Dalam konteks pemrograman parameter adalah variabel atau nilai yang 
-digunakan sebagai placeholder dalam sebuah fungsi. Parameter sendiri 
+digunakan sebagai *placeholder* dalam sebuah fungsi. Parameter sendiri 
 akan berperan sebagai placeholder untuk nilai yang akan diberikan kepada 
-fungsi. Pada Golang tipe data sebuah parameter selalu di definisikan 
+fungsi. Pada Go tipe data sebuah parameter selalu di definisikan 
 terlebih dahulu. Sebuah fungsi dapat memiliki satu atau lebih parameters. 
 Jadi jika terdapat sebuah fungsi yang memiliki parameter ketika di panggil 
 kita wajib memberikan nilai ke dalam parameter fungsi tersebut. Ketika 
@@ -23,12 +23,22 @@ Sebagai contoh lihat gambar berikut.
   alt="Sintaks Penerapan Fungsi Parameter"
 />
 
-**Penjelasan gambar** kita membuat sebuah fungsi `greeting` yang dinamis 
+**Penjelasan gambar**: kita membuat sebuah fungsi `greeting` yang dinamis 
 dengan menggunakan parameter yang menampung `name` dengan tipe 
 data string dan `age` yang tipe data integer. Dengan membuat fungsi yang 
 memiliki sebuah parameter kita bisa mengatur nilai yang Anda inginkan 
 setiap kali pemanggilan fungsi. Lalu bagaimana cara untuk memanggil 
 fungsi dengan sebuah parameter. Sebagai contoh lihat gambar di bawah.
+
+<Exercise 
+  answers={["Nilai yang dikembalikan oleh fungsi", "Nama fungsi yang akan dipanggil", "Nilai yang diterima oleh fungsi ketika dipanggil", "Jenis data yang digunakan dalam fungsi."]}
+  correctAnswer={"Nilai yang diterima oleh fungsi ketika dipanggil"}
+  explanation={"Dalam konsep programming parameter bisa di artikan sebagai placeholder sebuah fungsi yang bisa menerima nilai ketika fungsi di panggil."}
+  hint={" Mohon baca kembali materi tentang parameters."}
+  question={"Apa yang dimaksud dengan parameter dalam sebuah fungsi Golang?"}
+  isCode={false}
+/>
+
 
 <Image
   src="/content/bab-6/bab-6-4.png"
@@ -39,4 +49,4 @@ fungsi dengan sebuah parameter. Sebagai contoh lihat gambar di bawah.
 
 Dengan begitu kita bisa memanggil fungsi `greeting` dengan `name` dan 
 `age` yang berbeda setiap kali pemanggilan fungsi, dengan begini kita 
-sudah menerapkan sebuah konsep **DRY**.
+sudah menerapkan salah satu konsep _programming_ yaitu **DRY**.

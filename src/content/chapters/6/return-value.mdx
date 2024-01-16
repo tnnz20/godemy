@@ -1,7 +1,7 @@
 ---
 title: Return Value
 chapter: 6
-description: Materi tentang Return Value pada Golang
+description: Materi tentang Return Value pada Go
 ---
 
 Sebuah fungsi bisa dirancang tidak mengembalikan nilai balik (void), atau
@@ -14,45 +14,61 @@ kembalikan atau gunakan di tempat lain dalam program Anda. Dengan kata
 lain, `return` digunakan untuk mengirim kembali nilai dari fungsi ke
 pemanggilnya.
 
-Di Golang, penggunaan `return` dalam fungsi cukup sederhana. Berikut
-adalah beberapa poin penting tentang `return` dalam fungsi Golang:
+<Exercise 
+  answers={["50", "0", "10", "15"]}
+  correctAnswer={"50"}
+  explanation={"Pada fungsi luasPersegiPanjang menerima dua buah parameter yaitu panjang dan lebar dan memiliki return bertipe int yang mengembalikan nilai dari perkalian panjang dengan lebar."}
+  hint={" Mohon baca kembali materi tentang return"}
+  question={`func luasPersegiPanjang(panjang int, lebar int) int {
+ return panjang * lebar
+}
+`}
+  subQuestion={"Nilai yang akan dikembalikan oleh fungsi tersebut jika panjang = 10 dan lebar = 5 adalah ..."}
+  isCode={true}
+/>
+
+Di Go, penggunaan `return` dalam fungsi cukup sederhana. Berikut
+adalah beberapa poin penting tentang `return` dalam fungsi Go:
 
 ## 1. Tipe Kembalian (Return Type)
-   Setiap fungsi di Golang harus mendeklarasikan tipe data yang akan dikembalikan (return type) dalam
-   tanda kurung setelah nama fungsi. Ini menunjukkan jenis nilai yang
-   akan dikembalikan oleh fungsi tersebut.
 
+Setiap fungsi di Go harus mendeklarasikan tipe data yang akan dikembalikan (return type) dalam
+tanda kurung setelah nama fungsi. Ini menunjukkan jenis nilai yang
+akan dikembalikan oleh fungsi tersebut.
 
-   <Image src="/content/bab-6/bab-6-5.png" width="618" height="304" alt="Sintaks Penerapan Return Pada Fungsi" />
+<Image src="/content/bab-6/bab-6-5.png" width="618" height="304" alt="Sintaks Penerapan Return Pada Fungsi" />
 
-   Perlu diketahui nilai balik atau hasil return sebuah fungsi di golang wajib
-   mengikuti tipe datanya, jika tidak akan terdapat error. Pada contoh di
-   atas kita mendeklarisakan tipe data untuk nilai return adalah integer
-   sehingga nilainya pun wajib integer.
+Perlu diketahui nilai balik atau hasil return sebuah fungsi di Go wajib
+mengikuti tipe datanya, jika tidak akan terdapat error. Pada contoh di
+atas kita mendeklarisakan tipe data untuk nilai return adalah integer
+sehingga nilainya pun wajib integer.
 
 ## 2. Return Statement 
-Pernyataan `return` digunakan untuk
-   mengembalikan nilai dari fungsi. Nilai yang akan dikembalikan diikuti
-   oleh pernyataan `return`.
+
+Pernyataan `return` digunakan untuk mengembalikan nilai dari fungsi. Nilai yang akan dikembalikan diikuti
+oleh pernyataan `return`.
 
 ## 3. Menghentikan Eksekusi 
+   
 Ketika pernyataan `return` dieksekusi dalam
-   fungsi, eksekusi fungsi tersebut akan dihentikan, dan nilai yang
-   dikembalikan akan dikirim kembali kepada pemanggilnya. Fungsi yang
-   mengandung pernyataan `return` akan segera berakhir dan tidak akan
-   menjalankan kode apa pun di bawah pernyataan `return`
+fungsi, eksekusi fungsi tersebut akan dihentikan, dan nilai yang
+dikembalikan akan dikirim kembali kepada pemanggilnya. Fungsi yang
+mengandung pernyataan `return` akan segera berakhir dan tidak akan
+menjalankan kode apa pun di bawah pernyataan `return`
 
-   Contoh:
-   <Image src="/content/bab-6/bab-6-6.png" width="618" height="304" alt="Sintaks Penerapan Return Pada Fungsi 2" />
+Contoh:
 
-  Pada contoh di atas baris `Tidak akan dieksekusi` tidak akan tampil pada 
-  console ketika Anda memanggil fungsi `sum` karena ketika return di 
-  tulis program akan berhenti pada return dan baris selanjutnya akan 
-  dihiraukan.
-  Penggunaan `return` dalam fungsi sangat penting karena 
-  memungkinkan Anda untuk menghasilkan nilai atau hasil yang 
-  dihasilkan oleh fungsi tersebut. Nilai-nilai ini dapat digunakan dalam 
-  perhitungan lebih lanjut atau untuk mengambil keputusan dalam 
-  program Anda. Selain itu, penggunaan pernyataan `return` adalah cara 
-  yang baik untuk berinteraksi dengan kode Anda dan membuatnya lebih 
-  modular serta dapat digunakan kembali.
+<Image src="/content/bab-6/bab-6-6.png" width="618" height="304" alt="Sintaks Penerapan Return Pada Fungsi 2" />
+
+Pada contoh di atas baris `Tidak akan dieksekusi` tidak akan tampil pada 
+console ketika Anda memanggil fungsi `sum` karena ketika return di 
+tulis program akan berhenti pada return dan baris selanjutnya akan 
+dihiraukan.
+
+Penggunaan `return` dalam fungsi sangat penting karena 
+memungkinkan Anda untuk menghasilkan nilai atau hasil yang 
+dihasilkan oleh fungsi tersebut. Nilai-nilai ini dapat digunakan dalam 
+perhitungan lebih lanjut atau untuk mengambil keputusan dalam 
+program Anda. Selain itu, penggunaan pernyataan `return` adalah cara 
+yang baik untuk berinteraksi dengan kode Anda dan membuatnya lebih 
+modular serta dapat digunakan kembali.

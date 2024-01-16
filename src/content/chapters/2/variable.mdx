@@ -1,72 +1,75 @@
 ---
 title: Variable
 chapter: 2
-description: Materi tentang Variable pada Golang
+description: Materi tentang Variable pada Go
 ---
 
 Dalam computer programming, variabel adalah sebuah lokasi penyimpanan
 abstrak yang dipasangkan dengan nama **_identifier_**, yang berisi beberapa
 kuantitas informasi yang diketahui atau tidak diketahui yang disebut
-sebagai value **_nilai_** atau data
+sebagai **_value_** nilai atau data.
 
-<Image
-  src="/content/bab-2/bab-2-1.png"
-  width="718"
-  height="404"
-  alt="Ilustrasi Konsep Variabel"
-/>
+<Image src="/content/bab-2/bab-2-1.png" width="618" height="304" alt="Ilustrasi Konsep Variabel" />
 
 Pembuatan variabel bertujuan untuk menyiapkan sebuah tempat atau
 wadah di dalam memori yang bisa diisi dengan nilai, nilai itu sendiri
 memiliki berbagai macam jenis, keragaman jenis nilai ini akan dikenal
 dengan sebutan Data Types **_Tipe Data_**. Setiap variabel memiliki **_memory
-address_** (lokasi memori) masing-masing, dengan adanya**_memory address_** ini
+address_** (lokasi memori) masing-masing, dengan adanya **_memory address_** ini
 komputer akan tahu variabel apa yang ingin kita gunakan.
-Golang sendiri mengadopsi dua jenis penulisan variabel, yaitu yang
+
+Go sendiri mengadopsi dua jenis penulisan variabel, yaitu yang
 dituliskan tipe data-nya, dan juga yang tidak. Kedua penulisan tersebut valid
 dan memiliki tujuan yang sama, hanya saja cara penulisannya yang
 berbeda.
 
+<Exercise
+  answers={["Data types", "Looping", "Variable", "Address"]}
+  correctAnswer={"Variable"}
+  explanation={
+    "Variable merupakan istilah yang digunakan untuk penyimpanan sebuah nilai atau informasi yang diketahui maupun tidak diketahui."
+  }
+  hint={"Setiap informasi atau nilai akan memiliki memory address masing-masing"}
+  question={"Disebut apa penyimpanan sebuah nilai atau informasi yang diketahui maupun tidak diketahui."}
+  isCode={false}
+/>
+
 ## Deklarasi Variabel Dengan Tipe Data
 
-Golang memiliki aturan cukup ketat dalam hal penulisan variabel.
+Go memiliki aturan cukup ketat dalam hal penulisan variabel.
 Ketika deklarasi sebuah variabel menggunakan keyword var, kita
 harus menuliskan juga tipe datanya. Istilah lain dari konsep ini
 adalah **_manifest typing_**.
-Berikut contoh variabel yang tipe datanya harus ditulis
 
-<Image
-  src="/content/bab-2/bab-2-2.png"
-  width="718"
-  height="404"
-  alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data"
-/>
+Berikut contoh variabel yang tipe datanya harus ditulis.
+
+<Image src="/content/bab-2/bab-2-2.png" width="618" height="304" alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data" />
 
 keterangan:
 
-- Keyword var di atas digunakan untuk mendeklarasikan sebuah
+- Keyword `var` di atas digunakan untuk mendeklarasikan sebuah
   variabel.
-- nama merupakan identifier atau pengenal dari sebuah variabel
+- nama merupakan _identifier_ atau pengenal dari sebuah variabel
   yang kita deklarasikan.
-- string merupakan tipe data variabel yang di deklarasikan.
+- `string` merupakan tipe data variabel yang di deklarasikan.
 
 Contoh di atas merupakan cara mendeklarasikan sebuah variabel
-kosong. Untuk memasukan sebuah value (nilai) ke dalam variabel
+kosong. Untuk memasukan sebuah _value_ (nilai) ke dalam variabel
 ada dua cara, yaitu yang pertama dimasukan saat mendeklarasikan
 sebuah variabel dan kedua adalah dimasukan setelah
 
 mendeklarasikan variabel tersebut. Proses memasukan value atau
-nilai ke dalam variabel biasa di sebut dengan Assignment Value.
+nilai ke dalam variabel biasa di sebut dengan _Assignment Value_.
 
 ### Memasukan Nilai Saat Mendeklarasikan Variable
 
 Untuk memasukan nilai di saat kita mendeklarasikan variable
-kita cukup menambahkan tanda “=” setelah tipe data.
+kita cukup menambahkan tanda `=` setelah tipe data.
 
 <Image
   src="/content/bab-2/bab-2-3.png"
-  width="718"
-  height="404"
+  width="618"
+  height="304"
   alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data 2"
 />
 
@@ -74,14 +77,23 @@ kita cukup menambahkan tanda “=” setelah tipe data.
 
 Sedangkan untuk memasukan nilai ketika sudah
 mendeklarasikan sebuah variabel cukup menuliskan nama
-variabel lalu di ikuti dengan tanda “=” dan nilai yang ingin
+variabel lalu di ikuti dengan tanda `=` dan nilai yang ingin
 dimasukan.
 
 <Image
   src="/content/bab-2/bab-2-4.png"
-  width="718"
-  height="404"
+  width="618"
+  height="304"
   alt="Ilustrasi Deklarasi Variabel Dengan Tipe Data 3"
+/>
+
+<Exercise
+  answers={["Benar", "Salah"]}
+  correctAnswer={"Benar"}
+  explanation={"Benar sekali, pada Go kita bisa mendeklarasikan sebuah variable tanpa memasukan nilainya di awal."}
+  hint={"Mohon baca kembali materi yang berhubungan dengan variable."}
+  question={"Apakah kita bisa membuat atau mendeklarasikan sebuah variable tanpa memasukan nilainya?"}
+  isCode={false}
 />
 
 ## Deklarasi Variabel Tanpa Tipe Data
@@ -93,12 +105,7 @@ tipe datanya saat mendeklarasikan variabel, cara ini kontradiktif jika
 dibandingkan dengan cara _manifest typing_. Dengan metode jenis
 ini, keyword var dan tipe data tidak perlu ditulis.
 
-<Image
-  src="/content/bab-2/bab-2-5.png"
-  width="718"
-  height="404"
-  alt="Ilustrasi Deklarasi Variabel Tanpa Tipe Data"
-/>
+<Image src="/content/bab-2/bab-2-5.png" width="618" height="304" alt="Ilustrasi Deklarasi Variabel Tanpa Tipe Data" />
 
 ## Deklarasi Multi Variabel
 
@@ -108,24 +115,14 @@ dengan pembatas tanda koma `,`. Untuk pengisian nilainya-pun
 diperbolehkan secara bersamaan. Dengan adanya metode ini kita
 bisa menyingkat waktu dalam pendeklarasian sebuah variabel.
 
-<Image
-  src="/content/bab-2/bab-2-6.png"
-  width="718"
-  height="404"
-  alt="Deklarasi Multi Variabel"
-/>
+<Image src="/content/bab-2/bab-2-6.png" width="618" height="304" alt="Deklarasi Multi Variabel" />
 
 Selain menggunakan _manifest typing_ kita juga bisa menggunakan
 _type inference_ untuk mendeklarasikan multi variabel, selain
 membuat penulisan lebih ringkas dengan menggunakan type
 inference kita bisa menambahkan value dengan tipe data berbeda.
 
-<Image
-  src="/content/bab-2/bab-2-7.png"
-  width="718"
-  height="404"
-  alt="Deklarasi Multi Variabel 2"
-/>
+<Image src="/content/bab-2/bab-2-7.png" width="618" height="304" alt="Deklarasi Multi Variabel 2" />
 
 ## Menampilkan Value dari Variabel ke Console
 
@@ -138,14 +135,22 @@ Dengan menggunakan library fmt kita bisa menggunakan salah
 satu method yang tersedia yaitu “println” untuk menampilkan nilai
 variabel yang sudah kita deklarasikan.
 
-```go
-package main
-import "fmt"
+<Compiler src="https://goplay.tools/snippet/-pdmC16VO3d" />
 
-func main(){
-    var name string = "Ucok"
-    fmt.Println("Nama saya adalah", name)
-}
-```
-
-latihan
+<Exercise
+  answers={[
+    "currentJob == “mahasiswa”",
+    "currentJob = mahasiswa",
+    "mahasiswa = currentJob",
+    "currentJob = “mahasiswa”",
+  ]}
+  correctAnswer={"currentJob = “mahasiswa”"}
+  explanation={
+    "Untuk memasukan nilai ke dalam sebuah variable yang sudah di deklarasikan kita hanya perlu menggunakan “=” di ikuti dengan nilainya yang di apit dalam tanda petik."
+  }
+  hint={"Perhatikan kembali bagaimana penulisan atau struktur untuk memasukan nilai ke dalam variable."}
+  question={
+    "Jika terdapat sebuah variabel dengan nama “currentJob” dan bertipe “string”, bagaimana kita memasukan nilai “mahasiswa” ke dalam variable tersebut?"
+  }
+  isCode={false}
+/>
