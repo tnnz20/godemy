@@ -6,7 +6,7 @@ type Props = {
   limit: number
 }
 
-export default function TimeCountDown(props: Readonly<Props>) {
+export function TimeCountDown(props: Readonly<Props>) {
   const targetTime = new Date().getTime() + props.limit
 
   const calculateTimeRemaining = () => {

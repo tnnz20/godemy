@@ -14,9 +14,9 @@ import { QuizChapter } from "@/config/quiz"
 // import { indexToAlphabet } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
-import TimeCountDown from "./_components/timecountdown"
+import { TimeCountDown } from "./_components/timecountdown"
 
-export const useLocalStorage = (key: string, initialValue: any) => {
+const useLocalStorage = (key: string, initialValue: any) => {
   const initialize = (key: string) => {
     try {
       const item = localStorage.getItem(key)
