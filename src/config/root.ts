@@ -1,7 +1,7 @@
 import { HomeConfig } from "@/types"
 
 // TODO: Change based on section
-export const homeConfig: HomeConfig = [
+export const homeConfig: HomeConfig[] = [
   {
     title: "About",
     href: "/about",
