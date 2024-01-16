@@ -1,14 +1,5 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { Metadata } from "next"
-
-import { QuizChapter1 } from "@/config/quiz"
-import { indexToAlphabet } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-
-import TimeCountDown from "./_components/timecountdown"
-
 // export async function generateMetadata(): Promise<Metadata> {
 //   return {
 //     title: "Kuis " + QuizChapter1.category,
@@ -16,9 +7,64 @@ import TimeCountDown from "./_components/timecountdown"
 //   }
 // }
 
-export default function QuizPage() {
-  const [currentQuestion, setCurrentQuestion] = useState(4)
+// import { Metadata } from "next"
+import { useCallback, useEffect, useState } from "react"
 
+import { QuizChapter1 } from "@/config/quiz"
+// import { indexToAlphabet } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+
+import TimeCountDown from "./_components/timecountdown"
+
+export const useLocalStorage = (key: string, initialValue: any) => {
+  const initialize = (key: string) => {
+    try {
+      const item = localStorage.getItem(key)
+      if (item && item !== "undefined") {
+        return JSON.parse(item)
+      }
+
+      localStorage.setItem(key, JSON.stringify(initialValue))
+      return initialValue
+    } catch {
+      return initialValue
+    }
+  }
+
+  const [state, setState] = useState<any>(null) // problem is here
+
+  // solution is here....
+  useEffect(() => {
+    setState(initialize(key))
+  }, [])
+
+  const setValue = useCallback(
+    (value: any) => {
+      try {
+        setState(value)
+        localStorage.setItem(key, JSON.stringify(value))
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    [key, setState]
+  )
+
+  const remove = useCallback(() => {
+    try {
+      localStorage.removeItem(key)
+    } catch {
+      console.log("xxx")
+    }
+  }, [key])
+
+  return [state, setValue, remove]
+}
+
+export default function QuizPage() {
+  const [answers, setAnswers] = useLocalStorage("answers", {})
+
+  const [currentQuestion, setCurrentQuestion] = useState(4)
   const question = QuizChapter1
   const questionItem = question.quizItem[currentQuestion]
 
@@ -35,8 +81,18 @@ export default function QuizPage() {
           <h3>{questionItem?.question}</h3>
           <div className="mt-4 flex flex-col gap-2">
             {questionItem?.answers.map((item) => (
-              <div className="" key={questionItem.id}>
-                <Button variant={"ghost"}>{item}</Button>
+              <div className="" key={item}>
+                <Button
+                  variant={"ghost"}
+                  onClick={() => {
+                    setAnswers({
+                      ...answers,
+                      [questionItem.id]: item,
+                    })
+                  }}
+                >
+                  {item}
+                </Button>
               </div>
             ))}
           </div>
