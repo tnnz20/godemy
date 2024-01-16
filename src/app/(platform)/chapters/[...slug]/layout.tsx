@@ -1,5 +1,5 @@
 import { chaptersConfig } from "@/config/chapters"
-import { ChapterSidebarNav } from "@/app/(platform)/chapters/_components/sidebar-nav"
+import { ChapterSidebarNav } from "@/app/(platform)/chapters/_components/sidenav"
 
 import Navbar from "../_components/navbar"
 

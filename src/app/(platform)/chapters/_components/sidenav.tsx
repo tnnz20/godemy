@@ -75,6 +75,7 @@ export function ChapterSidebarNavItem({ items, pathname }: ChapterSidebarNavItem
   return items.length ? (
     <AccordionContent className={cn("ml-3")}>
       {items.map((item, index) =>
+        //TODO: change disabled to threshold
         !item.disabled && item.href ? (
           <Link
             key={index}
