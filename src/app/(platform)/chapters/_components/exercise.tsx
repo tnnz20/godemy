@@ -81,7 +81,7 @@ function CardExercise(props: Readonly<CardExerciseProps>) {
       </Card>
       {status == "idle" && (
         <CardFooter className="flex justify-end py-2">
-          <Button className="my-2 w-full md:w-auto" onClick={() => handleCheck(props.correctAnswer)}>
+          <Button disabled={!answer} className="my-2 w-full md:w-auto" onClick={() => handleCheck(props.correctAnswer)}>
             Cek Jawaban
           </Button>
         </CardFooter>
@@ -114,12 +114,12 @@ function ExerciseOption(props: Readonly<{ answers: string[] }>) {
         <Button
           variant={"outline"}
           onClick={() => handleClick(index, item)}
-          className={cn("flex justify-start p-6 pl-4 transition", { "bg-muted": isClicked == index })}
+          className={cn("flex h-auto justify-start pl-4 transition", { "bg-muted": isClicked == index })}
           key={index}
         >
-          <div className="flex w-auto items-center gap-2">
+          <div className="flex items-center gap-2">
             <div
-              className={cn("mr-2 flex h-8 w-8 items-center justify-center rounded-full bg-optionCircle transition", {
+              className={cn("mx-2 flex h-8 w-8 items-center justify-center rounded-full bg-optionCircle transition", {
                 "bg-activeOptionCircle": isClicked == index,
               })}
             >
@@ -132,7 +132,7 @@ function ExerciseOption(props: Readonly<{ answers: string[] }>) {
               </p>
             </div>
             <p
-              className={cn("ml-2 whitespace-normal text-muted-foreground transition", {
+              className={cn("ml-2 flex-1 whitespace-normal text-left text-muted-foreground transition", {
                 "text-foreground": isClicked == index,
               })}
             >
@@ -150,7 +150,6 @@ function ExerciseResult(props: Readonly<{ answers: string[]; hint: string; expla
 
   const convertAlphabet = (answers: string[], answer: string) => {
     const idx = answers.indexOf(answer)
-    console.log(idx)
     return indexToAlphabet(idx)
   }
 
