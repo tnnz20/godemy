@@ -10,7 +10,7 @@
 // import { Metadata } from "next"
 import { useCallback, useEffect, useState } from "react"
 
-import { QuizChapter1 } from "@/config/quiz"
+import { QuizChapter } from "@/config/quiz"
 // import { indexToAlphabet } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
@@ -65,13 +65,14 @@ export default function QuizPage() {
   const [answers, setAnswers] = useLocalStorage("answers", {})
 
   const [currentQuestion, setCurrentQuestion] = useState(4)
-  const question = QuizChapter1
-  const questionItem = question.quizItem[currentQuestion]
+  const question = QuizChapter
+  const selectedQuestion = question[0]
+  const questionItem = selectedQuestion.quizItem[currentQuestion]
 
   return (
     <main className="flex h-screen flex-col justify-center">
       <div className="mx-auto flex w-full max-w-screen-xl items-center justify-end p-2 md:justify-between">
-        <h1 className="hidden text-xl md:block">Kategori: {QuizChapter1.category}</h1>
+        <h1 className="hidden text-xl md:block">Kategori: {selectedQuestion.category}</h1>
         <div className="mr-5 border p-3">
           <TimeCountDown limit={600000} />
         </div>
@@ -99,8 +100,8 @@ export default function QuizPage() {
         </div>
         <div className="hidden h-full w-[30%] border-l md:block">
           <div className="mx-8 my-4 flex flex-wrap justify-start gap-4">
-            {question.quizItem.length
-              ? question.quizItem.map((_, idx) => (
+            {selectedQuestion.quizItem.length
+              ? selectedQuestion.quizItem.map((_, idx) => (
                   <div key={idx}>
                     <Button>{idx + 1}</Button>
                   </div>
