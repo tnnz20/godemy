@@ -1,11 +1,14 @@
 "use client"
 
 import { useState } from "react"
-import { useSearchParams } from "next/navigation"
+import { revalidatePath } from "next/cache"
+import Link from "next/link"
+import { usePathname, useSearchParams } from "next/navigation"
 import { QuizConfig, QuizItem } from "@/types"
 
 import { cn, indexToAlphabet } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { Icons } from "@/components/icons"
 import { useLocalStorage } from "@/app/hooks/useLocalStorage"
 
 type QuestionProps = {
@@ -17,15 +20,78 @@ export default function Question({ selectedQuestion }: Readonly<QuestionProps>) 
   const currentPage = Number(searchParams.get("next_question")) || 1
 
   const questionItem = selectedQuestion.quizItem[currentPage - 1]
+  const pathname = usePathname()
+  const createPageURL = (pageNumber: number | string) => {
+    const params = new URLSearchParams(searchParams)
+    params.set("next_question", pageNumber.toString())
+    return `${pathname}?${params.toString()}`
+  }
+
+  const handlePager = (id: number) => {
+    revalidatePath(createPageURL(id))
+  }
+
+  const { prev, next } = QuestionPager(selectedQuestion.quizItem, currentPage)
+  console.log("🚀 ~ Question ~ prev:", prev)
+  console.log("🚀 ~ Question ~ next:", next)
 
   return (
     <div className="container my-12 max-w-5xl md:ml-12">
       <h3 className="text-base/6">{questionItem.question}</h3>
       <div className="mt-4 flex flex-col gap-2">
         <QuestionOption quizItem={questionItem} currentPage={currentPage} />
+        <div className={cn("mt-6 flex h-11 w-full items-center justify-between", { "justify-end": !prev })}>
+          {prev && (
+            <Button
+              variant={"ghost"}
+              className={cn("flex items-center gap-2 px-2")}
+              onClick={() => handlePager(questionItem.id)}
+              asChild
+            >
+              <Link href={createPageURL(currentPage - 1)}>
+                <Icons.ChevronLeft />
+                <p>Kembali</p>
+              </Link>
+            </Button>
+          )}
+          {next ? (
+            <Button
+              variant={"ghost"}
+              className={cn("flex items-center gap-2  px-4")}
+              onClick={() => handlePager(questionItem.id)}
+              asChild
+            >
+              <Link href={createPageURL(currentPage + 1)}>
+                <p>Selanjutnya</p>
+                <Icons.ChevronRight />
+              </Link>
+            </Button>
+          ) : (
+            <Button
+              variant={"destructive"}
+              className={cn("flex items-center gap-2 px-4 font-bold")}
+              onClick={() => handlePager(questionItem.id)}
+              asChild
+            >
+              <Link href={"#"}>
+                <p>Submit</p>
+              </Link>
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   )
+}
+
+function QuestionPager(quizItem: QuizItem[], currentPage: number) {
+  const prev = currentPage !== 1 ? quizItem[currentPage - 2] : null
+  const next = currentPage !== quizItem.length ? quizItem[currentPage] : null
+
+  return {
+    prev,
+    next,
+  }
 }
 
 function QuestionOption({ quizItem, currentPage }: Readonly<{ quizItem: QuizItem; currentPage: number }>) {
