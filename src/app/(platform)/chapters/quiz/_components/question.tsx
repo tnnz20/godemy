@@ -19,7 +19,7 @@ export default function Question({ selectedQuestion }: Readonly<QuestionProps>) 
   const questionItem = selectedQuestion.quizItem[currentPage - 1]
 
   return (
-    <div className="container my-12 ml-12 max-w-5xl">
+    <div className="container my-12 max-w-5xl md:ml-12">
       <h3 className="text-base/6">{questionItem.question}</h3>
       <div className="mt-4 flex flex-col gap-2">
         <QuestionOption quizItem={questionItem} currentPage={currentPage} />
@@ -28,8 +28,7 @@ export default function Question({ selectedQuestion }: Readonly<QuestionProps>) 
   )
 }
 
-function QuestionOption({ quizItem, currentPage }: { quizItem: QuizItem; currentPage: number }) {
-  console.log(quizItem)
+function QuestionOption({ quizItem, currentPage }: Readonly<{ quizItem: QuizItem; currentPage: number }>) {
   const [answers, setAnswers] = useLocalStorage("answers", {})
 
   const [isClicked, setIsClicked] = useState<number | null>(null)
