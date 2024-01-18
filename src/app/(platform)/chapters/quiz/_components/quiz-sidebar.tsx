@@ -3,19 +3,22 @@
 import { revalidatePath } from "next/cache"
 import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
-import { QuizItem } from "@/types"
+import { QuizConfig } from "@/types"
 
-import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { useLocalStorage } from "@/app/hooks/useLocalStorage"
 
+import SubmitDialog from "./submit-dialog"
+
 type Props = {
-  questions: QuizItem[]
+  selectedQuestion: QuizConfig
 }
 
-export default function QuizSidebar({ questions }: Readonly<Props>) {
+export default function QuizSidebar({ selectedQuestion }: Readonly<Props>) {
   const pathname = usePathname()
   const searchParams = useSearchParams()
+
+  const questions = selectedQuestion.quizItem
 
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams)
@@ -38,6 +41,7 @@ export default function QuizSidebar({ questions }: Readonly<Props>) {
     }
     return "outline"
   }
+
   return (
     <div className="container  block h-full border-l md:w-[25%]">
       <div className="my-4 flex flex-col gap-4">
@@ -53,7 +57,9 @@ export default function QuizSidebar({ questions }: Readonly<Props>) {
             : null}
         </div>
         <div>
-          <Button className={cn("w-full")}>Submit</Button>
+          <SubmitDialog variant="default" className="w-full" selectedQuestion={selectedQuestion}>
+            Submit
+          </SubmitDialog>
         </div>
       </div>
     </div>

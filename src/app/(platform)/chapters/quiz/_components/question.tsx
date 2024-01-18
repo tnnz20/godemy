@@ -11,6 +11,8 @@ import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
 import { useLocalStorage } from "@/app/hooks/useLocalStorage"
 
+import SubmitDialog from "./submit-dialog"
+
 type QuestionProps = {
   selectedQuestion: QuizConfig
 }
@@ -32,8 +34,6 @@ export default function Question({ selectedQuestion }: Readonly<QuestionProps>) 
   }
 
   const { prev, next } = QuestionPager(selectedQuestion.quizItem, currentPage)
-  console.log("🚀 ~ Question ~ prev:", prev)
-  console.log("🚀 ~ Question ~ next:", next)
 
   return (
     <div className="container my-12 max-w-5xl md:ml-12">
@@ -67,16 +67,13 @@ export default function Question({ selectedQuestion }: Readonly<QuestionProps>) 
               </Link>
             </Button>
           ) : (
-            <Button
-              variant={"destructive"}
-              className={cn("flex items-center gap-2 px-4 font-bold")}
-              onClick={() => handlePager(questionItem.id)}
-              asChild
+            <SubmitDialog
+              variant="destructive"
+              className="flex items-center gap-2 px-4 font-bold"
+              selectedQuestion={selectedQuestion}
             >
-              <Link href={"#"}>
-                <p>Submit</p>
-              </Link>
-            </Button>
+              Submit
+            </SubmitDialog>
           )}
         </div>
       </div>

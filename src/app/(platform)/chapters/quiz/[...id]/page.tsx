@@ -35,7 +35,7 @@ export default async function QuizPage({ params }: Readonly<PageProps>) {
       <QuizNavbar category={selectedQuestion.category} />
       <div className="flex h-screen flex-col-reverse border md:flex-row">
         <Question selectedQuestion={selectedQuestion} />
-        <QuizSidebar questions={selectedQuestion.quizItem} />
+        <QuizSidebar selectedQuestion={selectedQuestion} />
       </div>
     </div>
   )
