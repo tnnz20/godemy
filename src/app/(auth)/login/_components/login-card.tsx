@@ -14,11 +14,12 @@ export default function LoginCard() {
         <FormLogin />
       </CardContent>
       <CardFooter className="flex justify-center">
-        <Link href="/" className="">
-          <CardDescription className="hover:text-brand underline underline-offset-4">
-            Belum punya akun? Daftar sekarang
-          </CardDescription>
-        </Link>
+        <CardDescription className="">
+          Belum punya akun?{" "}
+          <span className="hover:text-foreground hover:underline hover:underline-offset-4">
+            <Link href={"/registration"}>Daftar sekarang</Link>
+          </span>
+        </CardDescription>
       </CardFooter>
     </Card>
   )
