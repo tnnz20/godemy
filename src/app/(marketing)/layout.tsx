@@ -1,4 +1,4 @@
-import Footer from "./_components/footer"
+import Footer from "../../components/footer"
 import Navbar from "./_components/navbar"
 
 interface LayoutProps {
@@ -8,9 +8,9 @@ interface LayoutProps {
 // TODO: Fix Styling
 export default function LayoutHome({ children }: Readonly<LayoutProps>) {
   return (
-    <div className="">
+    <div>
       <Navbar />
-      <main className="">{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   )
