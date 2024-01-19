@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/components/theme.provider"
 
 import "@/styles/globals.css"
 
+import { Toaster } from "@/components/ui/toaster"
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -54,6 +56,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   )
