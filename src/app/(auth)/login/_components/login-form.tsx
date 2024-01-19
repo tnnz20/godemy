@@ -23,10 +23,10 @@ export function FormLogin() {
     Invalid: "Password Salah.",
     Validations: "Ada field yang belum terpenuhi.",
   }
-
+  // TODO: BUG TOAST
   useEffect(() => {
     const stateMessage: string = String(state?.message)
-    if (state?.errors) {
+    if (state?.message !== null) {
       toast({
         variant: "destructive",
         title: "Kesalahan Saat Login!",
