@@ -1,6 +1,8 @@
 "use server"
 
+import { revalidatePath } from "next/cache"
 import { cookies } from "next/headers"
+import { redirect } from "next/navigation"
 import { LoginSchema, RegisterSchema } from "@/validators/auth"
 
 import { LoginState } from "@/types/auth"
@@ -11,10 +13,11 @@ export async function signIn(prevState: LoginState, formData: FormData) {
     password: formData.get("password"),
   })
 
+  console.log()
   if (!validateFields.success) {
     return {
       errors: validateFields.error.flatten().fieldErrors,
-      message: "Gagal masuk!. Ada field yang belum terpenuhi.",
+      message: "Validations",
     }
   }
 
@@ -41,13 +44,21 @@ export async function signIn(prevState: LoginState, formData: FormData) {
         path: "/",
         maxAge: 60 * 60,
       })
+    } else if (response.status == 500) {
+      return {
+        errors: {},
+        message: "Invalid",
+      }
     } else {
       return {
-        errors: "",
-        message: "Email tidak terdaftar.",
+        errors: {},
+        message: "Failed",
       }
     }
   } catch (error) {
     console.error(error)
   }
+
+  revalidatePath("/dashboard")
+  redirect("/dashboard")
 }
