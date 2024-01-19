@@ -113,6 +113,7 @@ function QuestionOption({ quizItem, currentPage }: Readonly<{ quizItem: QuizItem
             onClick={() => {
               handleClick(quizItem.id, item, index)
             }}
+            type="button"
             className={cn("flex h-auto w-full justify-start px-2 transition")}
           >
             <div className="flex items-center gap-1">

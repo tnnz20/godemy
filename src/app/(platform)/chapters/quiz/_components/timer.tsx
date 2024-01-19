@@ -34,7 +34,7 @@ export function TimeCountDown(props: Readonly<Props>) {
     return () => clearInterval(interval)
   }, [])
   return (
-    <p className="text-destructive">
+    <p className="font-bold text-destructive">
       {timeRemaining.minutes < 10 ? "0" : ""}
       {timeRemaining.minutes}:{timeRemaining.seconds < 10 ? "0" : ""}
       {timeRemaining.seconds}
