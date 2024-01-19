@@ -5,8 +5,8 @@ import Link from "next/link"
 import { usePathname, useSearchParams } from "next/navigation"
 import { QuizConfig } from "@/types"
 
+import { useLocalStorage } from "@/hooks/useLocalStorage"
 import { Button } from "@/components/ui/button"
-import { useLocalStorage } from "@/app/hooks/useLocalStorage"
 
 import SubmitDialog from "./submit-dialog"
 

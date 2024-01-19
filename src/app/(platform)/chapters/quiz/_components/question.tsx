@@ -7,9 +7,9 @@ import { usePathname, useSearchParams } from "next/navigation"
 import { QuizConfig, QuizItem } from "@/types"
 
 import { cn, indexToAlphabet } from "@/lib/utils"
+import { useLocalStorage } from "@/hooks/useLocalStorage"
 import { Button } from "@/components/ui/button"
 import { Icons } from "@/components/icons"
-import { useLocalStorage } from "@/app/hooks/useLocalStorage"
 
 import SubmitDialog from "./submit-dialog"
 
