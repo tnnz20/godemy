@@ -37,45 +37,48 @@ export default function Question({ selectedQuestion }: Readonly<QuestionProps>) 
 
   return (
     <div className="container my-12 max-w-5xl md:ml-12">
-      <h3 className="text-base/6">{questionItem.question}</h3>
-      <div className="mt-4 flex flex-col gap-2">
-        <QuestionOption quizItem={questionItem} currentPage={currentPage} />
-        <div className={cn("mt-6 flex h-11 w-full items-center justify-between", { "justify-end": !prev })}>
-          {prev && (
-            <Button
-              variant={"ghost"}
-              className={cn("flex items-center gap-2 px-2")}
-              onClick={() => handlePager(questionItem.id)}
-              asChild
-            >
-              <Link href={createPageURL(currentPage - 1)}>
-                <Icons.ChevronLeft />
-                <p>Kembali</p>
-              </Link>
-            </Button>
-          )}
-          {next ? (
-            <Button
-              variant={"ghost"}
-              className={cn("flex items-center gap-2  px-4")}
-              onClick={() => handlePager(questionItem.id)}
-              asChild
-            >
-              <Link href={createPageURL(currentPage + 1)}>
-                <p>Selanjutnya</p>
-                <Icons.ChevronRight />
-              </Link>
-            </Button>
-          ) : (
-            <SubmitDialog
-              variant="destructive"
-              className="flex items-center gap-2 px-4 font-bold"
-              selectedQuestion={selectedQuestion}
-            >
-              Submit
-            </SubmitDialog>
-          )}
+      <div className="flex flex-col gap-2">
+        <h3 className="text-base/6">{questionItem.question}</h3>
+        <div className="mt-4 flex flex-col gap-2">
+          <QuestionOption quizItem={questionItem} currentPage={currentPage} />
         </div>
+      </div>
+
+      <div className={cn("mt-6 flex h-11 w-full items-center justify-between", { "justify-end": !prev })}>
+        {prev && (
+          <Button
+            variant={"ghost"}
+            className={cn("flex items-center gap-2 px-2")}
+            onClick={() => handlePager(questionItem.id)}
+            asChild
+          >
+            <Link href={createPageURL(currentPage - 1)}>
+              <Icons.ChevronLeft />
+              <p>Kembali</p>
+            </Link>
+          </Button>
+        )}
+        {next ? (
+          <Button
+            variant={"ghost"}
+            className={cn("flex items-center gap-2  px-4")}
+            onClick={() => handlePager(questionItem.id)}
+            asChild
+          >
+            <Link href={createPageURL(currentPage + 1)}>
+              <p>Selanjutnya</p>
+              <Icons.ChevronRight />
+            </Link>
+          </Button>
+        ) : (
+          <SubmitDialog
+            variant="destructive"
+            className="flex items-center gap-2 px-4 font-bold"
+            selectedQuestion={selectedQuestion}
+          >
+            Submit
+          </SubmitDialog>
+        )}
       </div>
     </div>
   )
