@@ -43,7 +43,7 @@ export default function QuizSidebar({ selectedQuestion }: Readonly<Props>) {
   }
 
   return (
-    <div className="container  block h-full border-l md:w-[25%]">
+    <div className="container block border-l md:h-full md:w-[25%]">
       <div className="my-4 flex flex-col gap-4">
         <div className="my-4 flex flex-wrap justify-start gap-4">
           {questions.length
