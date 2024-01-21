@@ -12,8 +12,7 @@ export type HomeConfig = {
   title: string
   href: string
 }
-
-// TODO: active treshold and delete disabled
+// Chapters
 export type SidebarNavItem = {
   title: string
   disabled?: boolean
