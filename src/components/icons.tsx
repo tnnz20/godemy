@@ -48,6 +48,7 @@ export const Icons = {
   GraduationCap: GraduationCap,
   MoveLeft: MoveLeft,
   ArrowRight: ArrowRight,
+  ArrowLeft: ArrowLeft,
   help: HelpCircle,
   pizza: Pizza,
   Sun: SunMedium,
