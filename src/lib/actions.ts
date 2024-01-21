@@ -7,6 +7,8 @@ import { LoginSchema, RegisterSchema } from "@/validators/auth"
 
 import { LoginState, RegisterState } from "@/types/auth"
 
+const BASE_DIR = process.env.NEXT_PUBLIC_BASE_DIR
+
 export async function signIn(prevState: LoginState, formData: FormData) {
   const validateFields = LoginSchema.safeParse({
     email: formData.get("email"),
@@ -23,7 +25,7 @@ export async function signIn(prevState: LoginState, formData: FormData) {
   const { email, password } = validateFields.data
 
   try {
-    const response = await fetch(`${process.env.BASE_DIR}/auth/sign-in`, {
+    const response = await fetch(`${BASE_DIR}/auth/sign-in`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -82,13 +84,12 @@ export async function signUp(prevState: RegisterState, formData: FormData) {
   const { name, email, password, gender, role } = validateFields.data
 
   try {
-    const response = await fetch(`${process.env.BASE_DIR}/user/sign-up`, {
+    const response = await fetch(`${BASE_DIR}/user/sign-up`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ name, email, password, gender, role }),
-      referrer: `${process.env.BASE_DIR}`,
     })
 
     const data = await response.json()
