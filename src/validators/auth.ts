@@ -1,37 +1,31 @@
 import { z } from "zod"
 
 export const LoginSchema = z.object({
-  email: z
-    .string({
-      invalid_type_error:
-        "Invalid email: mohon masukan format email yang benar.",
-    })
-    .email(),
+  email: z.string().email({
+    message: "Mohon masukan format email yang benar.",
+  }),
   password: z.string().min(6, {
-    message: "Invalid password: password minimal 6 karakter.",
+    message: "Password minimal 6 karakter.",
   }),
 })
 
 export const RegisterSchema = z.object({
-  email: z
-    .string({
-      invalid_type_error:
-        "Invalid email: mohon masukan format email yang benar.",
-    })
-    .email(),
-  password: z
-    .string({
-      invalid_type_error: "Invalid password: password minimal 6 karakter.",
-    })
-    .min(6),
-  name: z
-    .string({
-      invalid_type_error:
-        "Invalid name: mohon masukan nama lebih dari 4 karakter",
-    })
-    .min(4),
-  gender: z.enum(["Laki-Laki", "Perempuan"], {
-    invalid_type_error:
-      "Invalid gender: pilih salah satu dari gender yang tersedia.",
+  email: z.string().email({
+    message: "Mohon masukan format email yang benar.",
   }),
+  password: z.string().min(6, {
+    message: "Password minimal 6 karakter.",
+  }),
+  name: z
+    .string()
+    .min(4, { message: "Mohon masukan nama lebih dari 4 karakter." }),
+  gender: z.enum(["Laki-Laki", "Perempuan"], {
+    errorMap: (issue, _ctx) => {
+      switch (issue.code) {
+        case "invalid_enum_value":
+          return { message: "Mohon pilih salah satu jenis kelamin." }
+      }
+    },
+  }),
+  role: z.enum(["teacher", "student"]),
 })
