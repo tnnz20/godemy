@@ -16,3 +16,7 @@ export type LoginState = {
   }
   message?: string | null
 }
+
+export type ButtonFormAuth = {
+  pending: boolean
+}
