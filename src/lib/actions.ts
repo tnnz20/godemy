@@ -44,7 +44,7 @@ export async function signIn(prevState: LoginState, formData: FormData) {
         value: token,
         httpOnly: true,
         path: "/",
-        maxAge: 60 * 60,
+        maxAge: 24 * 60 * 60 * 2, // 2 days
       })
     } else if (response.status == 500) {
       return {
