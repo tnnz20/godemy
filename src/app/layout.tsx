@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import localFont from "next/font/local"
 
-import { siteConfig } from "@/config/site"
+import { RootConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { ThemeProvider } from "@/components/theme.provider"
 
@@ -27,10 +27,10 @@ const fontLogo = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    default: RootConfig.name,
+    template: `%s | ${RootConfig.name}`,
   },
-  description: siteConfig.description,
+  description: RootConfig.description,
   icons: [
     {
       url: "/Icon.svg",
