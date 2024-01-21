@@ -8,6 +8,7 @@ import { LoginSchema, RegisterSchema } from "@/validators/auth"
 import { LoginState, RegisterState } from "@/types/auth"
 
 const BASE_DIR = process.env.NEXT_PUBLIC_BASE_DIR
+console.log("🚀 ~ BASE_DIR:", BASE_DIR)
 
 export async function signIn(prevState: LoginState, formData: FormData) {
   const validateFields = LoginSchema.safeParse({
