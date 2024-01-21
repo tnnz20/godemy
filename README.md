@@ -39,5 +39,6 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 - [ ] Form registration
 - [ ] Quiz Interactive (countdown and UI)
+- [ ] Exercise Bug (only 1 count because of state)
 - [ ] Landing Page
   
