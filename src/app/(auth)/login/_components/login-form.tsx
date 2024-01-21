@@ -3,7 +3,7 @@
 import { useEffect } from "react"
 import { useFormState, useFormStatus } from "react-dom"
 
-import { LoginState } from "@/types/auth"
+import { ButtonFormAuth, LoginState } from "@/types/auth"
 import { signIn } from "@/lib/actions"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
@@ -11,10 +11,10 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/components/ui/use-toast"
 
-const initialState: LoginState = { errors: {}, message: null }
-
 export function FormLogin() {
+  const initialState: LoginState = { errors: {}, message: null }
   const [state, dispatch] = useFormState(signIn, initialState as any)
+
   const { toast } = useToast()
   const { pending } = useFormStatus()
 
@@ -30,7 +30,7 @@ export function FormLogin() {
       toast({
         variant: "destructive",
         title: "Kesalahan Saat Login!",
-        description: errorDescription[stateMessage],
+        description: errorDescription[stateMessage] || state.message,
       })
     }
   }, [state, toast])
@@ -39,28 +39,24 @@ export function FormLogin() {
     <form action={dispatch}>
       <div className="grid w-full items-center gap-4">
         <div className="flex flex-col space-y-1.5">
-          <Label htmlFor="email" className={cn({ "text-destructive": state?.errors.email })}>
+          <Label htmlFor="email" className={cn({ "text-destructive": state?.errors?.email })}>
             Email
           </Label>
-          <Input id="email" name="email" placeholder="godemy@example.com" />
-          {state?.errors.email ? (
+          <Input id="email" name="email" required placeholder="godemy@example.com" />
+          {state?.errors?.email ? (
             <div id="customer-error" aria-live="polite" className="mt-2 text-sm text-destructive">
-              {state.errors.email.map((error: string) => (
-                <p key={error}>{error}</p>
-              ))}
+              {state.errors?.email.map((error: string) => <p key={error}>{error}</p>)}
             </div>
           ) : null}
         </div>
         <div className="flex flex-col space-y-1.5">
-          <Label htmlFor="password" className={cn({ "text-destructive": state?.errors.password })}>
+          <Label htmlFor="password" className={cn({ "text-destructive": state?.errors?.password })}>
             Password
           </Label>
-          <Input id="password" name="password" placeholder="Password email anda" type="password" />
-          {state?.errors.password ? (
+          <Input id="password" name="password" placeholder="Password email anda" type="password" required />
+          {state?.errors?.password ? (
             <div id="customer-error" aria-live="polite" className="mt-2 text-sm text-destructive">
-              {state.errors.password.map((error: string) => (
-                <p key={error}>{error}</p>
-              ))}
+              {state.errors?.password.map((error: string) => <p key={error}>{error}</p>)}
             </div>
           ) : null}
         </div>
@@ -71,13 +67,11 @@ export function FormLogin() {
     </form>
   )
 }
-type SubmitLoginProps = {
-  pending: boolean
-}
-function SubmitLogin({ pending }: Readonly<SubmitLoginProps>) {
+
+function SubmitLogin({ pending }: Readonly<ButtonFormAuth>) {
   return (
-    <Button className="w-full" type="submit" aria-disabled={pending}>
-      Masuk
+    <Button className="w-full" type="submit" disabled={pending}>
+      {!pending ? "Masuk" : "Mohon tunggu..."}
     </Button>
   )
 }
