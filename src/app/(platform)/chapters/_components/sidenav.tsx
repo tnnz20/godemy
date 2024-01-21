@@ -53,7 +53,7 @@ export function ChapterSidebarNav({ items }: Readonly<ChapterSidebarNavProps>) {
           </div>
           <Accordion type="single" defaultValue={`item-${currentIndexPage}`} collapsible>
             {items.map((item, index) => (
-              <div key={index}>
+              <div key={item.title}>
                 <AccordionItem value={"item-" + index} className="m-2">
                   <AccordionTrigger className={cn("flex gap-4")}>{item.title}</AccordionTrigger>
                   {item.items ? <ChapterSidebarNavItem items={item.items} pathname={pathname} /> : null}
