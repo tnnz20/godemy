@@ -1,7 +1,26 @@
+import { Metadata } from "next"
+
+import { DashboardConfig } from "@/config/site"
+
 import SideNav from "./_components/sidenav"
 
 interface DocsLayoutProps {
   children: React.ReactNode
+}
+
+console.log(DashboardConfig.name)
+
+export const metadata: Metadata = {
+  title: {
+    default: DashboardConfig.name,
+    template: `%s | ${DashboardConfig.name}`,
+  },
+  description: DashboardConfig.description,
+  icons: [
+    {
+      url: "/Icon.svg",
+    },
+  ],
 }
 
 export default function DocsLayout({ children }: Readonly<DocsLayoutProps>) {
