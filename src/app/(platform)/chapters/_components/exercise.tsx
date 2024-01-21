@@ -164,7 +164,7 @@ function ExerciseResult(props: Readonly<{ answers: string[]; hint: string; expla
           >
             <p className={cn("text-activeOptionAnswer transition")}>{option}</p>
           </div>
-          <p className="text-md my-2 font-semibold">{"//"}</p>
+          <p className="text-md my-2 font-semibold">{answer}</p>
           <div className="my-4 flex w-auto items-center justify-center gap-2 rounded-3xl bg-correctBadgeResult px-3 py-2">
             <Icons.Check className="flex h-4 w-4 items-center text-correctBadgeResultText" />
             <p className="text-sm font-semibold text-correctBadgeResultText">Benar</p>
