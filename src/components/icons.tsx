@@ -15,6 +15,7 @@ import {
   Laptop,
   List,
   Loader2,
+  LogOut,
   LucideProps,
   Moon,
   MoreVertical,
@@ -30,6 +31,7 @@ import {
 } from "lucide-react"
 
 export const Icons = {
+  Logout: LogOut,
   List: List,
   Close: X,
   Spinner: Loader2,
