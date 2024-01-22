@@ -1,5 +1,8 @@
 import Link from "next/link"
 
+import { Icons } from "@/components/icons"
+
+import LogoutButtonDialog from "./logout-button"
 import NavLink from "./sidenav-item"
 
 export default function SideNav() {
@@ -17,6 +20,12 @@ export default function SideNav() {
         <NavLink />
         <div className="hidden h-auto w-full grow rounded-md  md:block"></div>
       </div>
+      <LogoutButtonDialog className="flex h-10 justify-end border border-foreground px-4  py-2 pr-8 text-muted-foreground transition hover:border-none hover:bg-destructive hover:text-primary">
+        <div className="flex items-center justify-end gap-2">
+          <Icons.Logout className="h-4 w-4 " />
+          Logout
+        </div>
+      </LogoutButtonDialog>
     </div>
   )
 }
