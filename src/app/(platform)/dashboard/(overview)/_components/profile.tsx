@@ -31,7 +31,7 @@ export default async function Profile({ USER_TOKEN }: Readonly<ProfileProps>) {
     },
     {
       title: "Role",
-      value: res?.data?.role,
+      value: res?.data?.role === "teacher" ? "Guru" : "Siswa",
     },
   ]
   return (
