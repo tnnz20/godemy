@@ -3,12 +3,10 @@
 import { revalidatePath } from "next/cache"
 import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
+import { BASE_URL } from "@/constants/constants"
 import { LoginSchema, RegisterSchema } from "@/validators/auth"
 
 import { LoginState, RegisterState } from "@/types/auth"
-
-const BASE_DIR = process.env.NEXT_PUBLIC_BASE_DIR
-console.log("🚀 ~ BASE_DIR:", BASE_DIR)
 
 export async function signIn(prevState: LoginState, formData: FormData) {
   const validateFields = LoginSchema.safeParse({
@@ -26,7 +24,7 @@ export async function signIn(prevState: LoginState, formData: FormData) {
   const { email, password } = validateFields.data
 
   try {
-    const response = await fetch(`${BASE_DIR}/auth/sign-in`, {
+    const response = await fetch(`${BASE_URL}/auth/sign-in`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -85,7 +83,7 @@ export async function signUp(prevState: RegisterState, formData: FormData) {
   const { name, email, password, gender, role } = validateFields.data
 
   try {
-    const response = await fetch(`${BASE_DIR}/user/sign-up`, {
+    const response = await fetch(`${BASE_URL}/user/sign-up`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
